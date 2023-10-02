@@ -122,6 +122,3 @@ else if (y.equals("*")) {
 }
 ~~~~
 > In den obrigen `if-else if`-Blöcken wird der eingegebene Operator `y` überprüft, und je nachdem, welcher Operator eingegeben wurde (`+`, `-`, `/`, `*`), wird die entsprechende mathematische Operation auf den beiden eingegebenen Zahlen `x` und `z` durchgeführt. Das Ergebnis wird dann auf die Konsole ausgegeben, zusammen mit dem Präfix `res_msg`.
-
-Das Programm erlaubt es dem Benutzer, zwei Zahlen und einen Operator einzugeben und gibt das Ergebnis der ausgewählten Operation aus. Zum Beispiel, wenn der Benutzer die Zahlen 5 und 3 sowie den Operator "+" eingibt, wird das Programm "Resultat: 8" ausgeben.
-
