@@ -36,7 +36,3 @@ public class Calculator {
     }
 }
 ```
-
-1<sub>10</sub> + 160<sub>10</sub> + 1'024<sub>10</sub> + 53'248<sub>10</sub> = **54'433<sub>10</sub>**
-
-# TEST
