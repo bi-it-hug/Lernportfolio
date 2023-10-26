@@ -6,32 +6,40 @@
 import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
+        // Fragt den Benutzer nach der ersten Zahl
         System.out.println("\nZahl 1:");
-        int x = scanner.nextInt();
-        scanner.nextLine();
+        int num1 = input.nextInt();
+        input.nextLine();
 
-        System.out.println("\nOperator:");
-        String y = scanner.nextLine();
-
+        // Fragt den Benutzer nach dem Operationszeichen
+        System.out.println("\nOperationszeichen:");
+        String operator = input.nextLine();
+        
+        // Fragt den Benutzer nach der ersten Zahl
         System.out.println("\nZahl 2:");
-        int z = scanner.nextInt();
-        scanner.close();
+        int num2 = input.nextInt();
+        input.close();
 
-        String res_msg = "\nResultat:";
+        // Ausgabe der beiden Zahlen mit dem "+" Operationszeichen
+        if (operator.equals("+")) {
+            System.out.println("\nResultat:\n" +  (num1 + num2) + "\n");
+        }
 
-        if (y.equals("+")) {
-            System.out.println(res_msg + "\n" +  (x + z) + "\n");
+        // Ausgabe der beiden Zahlen mit dem "-" Operationszeichen
+        else if (operator.equals("-")) {
+            System.out.println("\nResultat:\n" +  (num1 - num2) + "\n");
         }
-        else if (y.equals("-")) {
-            System.out.println(res_msg + "\n" +  (x - z) + "\n");
+
+        // Ausgabe der beiden Zahlen mit dem "*" Operationszeichen
+        else if (operator.equals("*")) {
+            System.out.println("\nResultat:\n" +  (num1 * num2) + "\n");
         }
-        else if (y.equals("/")) {
-            System.out.println(res_msg + "\n" +  (x / z) + "\n");
-        }
-        else if (y.equals("*")) {
-            System.out.println(res_msg + "\n" +  (x * z) + "\n");
+
+        // Ausgabe der beiden Zahlen mit dem "/" Operationszeichen
+        else if (operator.equals("/")) {
+            System.out.println("\nResultat:\n" +  (num1 / num2) + "\n");
         }
     }
 }
