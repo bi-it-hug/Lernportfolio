@@ -57,7 +57,7 @@ public class ToDoList {
             //Hole das Element des Indexes
             String elementOfIndex = toDoList.get(indexOfElement);
 
-            //Füge dem Element inder Liste ein Stern hinzu
+            //Füge dem Element in der Liste ein Stern hinzu
             toDoList.set(indexOfElement, elementOfIndex + " *");
             System.out.println("successfully marked" + markElement + "as done");
             askForInput();
