@@ -6,8 +6,6 @@ public class challenges {
 
         int result = num1 + num2;
 
-        for (int x = 0; x < 10; x++) {
-
-        }
+        System.out.println(result);
     }
 }
