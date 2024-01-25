@@ -1,0 +1,66 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debugger",
+      "request": "launch",
+      "mainClass": "Debugger",
+      "projectName": "Java_cb4f046e"
+    },
+    {
+      "type": "java",
+      "name": "geometry",
+      "request": "launch",
+      "mainClass": "geometry",
+      "projectName": "Java_cb4f046e"
+    },
+    {
+      "type": "java",
+      "name": "Sort",
+      "request": "launch",
+      "mainClass": "Sort",
+      "projectName": "Java_cb4f046e"
+    },
+    {
+      "type": "java",
+      "name": "School",
+      "request": "launch",
+      "mainClass": "School",
+      "projectName": "Java_cb4f046e"
+    },
+    {
+      "type": "java",
+      "name": "StringSort",
+      "request": "launch",
+      "mainClass": "StringSort",
+      "projectName": "Java_cb4f046e"
+    },
+    {
+      "type": "java",
+      "name": "ToDoList",
+      "request": "launch",
+      "mainClass": "ToDoList",
+      "projectName": "Java_cb4f046e"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/Lorenzo/OneDrive - BSFH Berufsfachschule/BSFH/Informatik/Module/Modul 319/Java/school",
+      "program": "c:/Users/Lorenzo/OneDrive - BSFH Berufsfachschule/BSFH/Informatik/Module/Modul 319/Java/school/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
