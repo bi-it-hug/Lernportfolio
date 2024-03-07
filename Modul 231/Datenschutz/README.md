@@ -1,3 +1,28 @@
+# Datensicherheit und Datenschutz
+
+>[!NOTE]
+Der Unterschied zwischen Datenschutz und Datensicherheit liegt in ihren Schwerpunkten und Zielen. Datensicherheit konzentriert sich auf technische und organisatorische Maßnahmen, um Daten vor Bedrohungen wie Manipulation, unbefugtem Zugriff und Ausfall zu schützen. Die Hauptziele der Datensicherheit, gemäß der CIA-Triad, umfassen Verfügbarkeit, Vertraulichkeit und Integrität der Daten.
+
+## Datensicherheit
+
+- Verfügbarkeit: Gewährleistung, dass Daten innerhalb eines festgelegten Zeitraums verfügbar sind und Systemausfälle vermieden werden.
+
+- Vertraulichkeit: Sicherstellung, dass Daten nur von autorisierten Benutzern gelesen oder geändert werden können, sowohl während der Speicherung als auch bei der Übertragung.
+
+- Integrität: Sicherstellung, dass Daten nicht unbemerkt verändert werden und alle Änderungen nachvollziehbar sind.
+
+![Datensicherheit Dreieck](triangle.bmp)
+
+## Datenschutz
+
+Datenschutz hingegen bezieht sich auf den Schutz personenbezogener Daten und umfasst rechtliche und ethische Aspekte. Dies kann den Schutz vor missbräuchlicher Datenverarbeitung, die Sicherung des Rechts auf informationelle Selbstbestimmung, den Schutz der Privatsphäre und anderer Persönlichkeitsrechte umfassen.
+
+
+> [!IMPOTANT]
+Insgesamt kann man sagen, dass Datensicherheit sich auf technische und organisatorische Maßnahmen konzentriert, um Daten zu schützen, während Datenschutz sich auf rechtliche und ethische Aspekte des Schutzes personenbezogener Daten konzentriert.
+
+***
+
 # 2024-03-07 | 03 - Herausforderungen in der digitalen Welt
 
 ## Gruppenarbeit
