@@ -26,7 +26,7 @@
 ## Persönliches Fazit und Ausblick
 - Erfolgreiches Erlernen und Anwenden der BASH-Scripting-Grundlagen
 - Nächste Schritte: Anwendung in praxisorientierten Projekten, Vertiefung fortgeschrittener Konzepte wie Funktionen und Skriptoptimierung
-- Stärkung des Vertrauens durch regelmäßiges Üben und Arbeiten an realen Anwendungen
+- Stärkung des Vertrauens durch regelmässiges Üben und Arbeiten an realen Anwendungen
 
 ***
 
@@ -40,8 +40,8 @@ Linux wurde von Linus Torvalds als Neugierprojekt gestartet und hat sich seitdem
 
 - Empfehlung zur Installation einer virtuellen Maschine (VM) für eine eigenständige Linux-Umgebung.
 
-- Vorstellung von Linux-Distributionen wie Debian und Ubuntu, einschließlich der Installationsschritte.
+- Vorstellung von Linux-Distributionen wie Debian und Ubuntu, einschliesslich der Installationsschritte.
 
 - Einführung in die Linux-Verzeichnishierarchie mit wichtigen Verzeichnissen wie /bin, /dev, /etc, /home, /lib, /opt, /run, /sbin, /tmp, /usr und /var.
 
-- Checkpoint für den Fortschritt, einschließlich der Bestätigung der Linux-Herkunft, der erfolgreichen Installation einer Distribution und der Durchführung der ersten Schritte nach der Installation.
+- Checkpoint für den Fortschritt, einschliesslich der Bestätigung der Linux-Herkunft, der erfolgreichen Installation einer Distribution und der Durchführung der ersten Schritte nach der Installation.
