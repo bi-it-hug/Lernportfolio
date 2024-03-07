@@ -1,5 +1,3 @@
-Die wichtigsten Punkte des Arbeitsauftrags und der Themen sind:
-
 # 2024-03-07 | 03 - Herausforderungen in der digitalen Welt
 
 ## Gruppenarbeit
