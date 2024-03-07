@@ -18,7 +18,7 @@ Der Unterschied zwischen Datenschutz und Datensicherheit liegt in ihren Schwerpu
 Datenschutz hingegen bezieht sich auf den Schutz personenbezogener Daten und umfasst rechtliche und ethische Aspekte. Dies kann den Schutz vor missbräuchlicher Datenverarbeitung, die Sicherung des Rechts auf informationelle Selbstbestimmung, den Schutz der Privatsphäre und anderer Persönlichkeitsrechte umfassen.
 
 
-> [!IMPOTANT]
+>[!IMPOTANT]
 Insgesamt kann man sagen, dass Datensicherheit sich auf technische und organisatorische Maßnahmen konzentriert, um Daten zu schützen, während Datenschutz sich auf rechtliche und ethische Aspekte des Schutzes personenbezogener Daten konzentriert.
 
 ***
