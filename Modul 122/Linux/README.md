@@ -1,3 +1,26 @@
+# 2024-03-14 | 03 - Bash Übungen
+
+**Übung 1 - Repetition: Navigieren in Verzeichnissen:**
+- Wechseln Sie zwischen verschiedenen Verzeichnissen, sowohl mit absoluten als auch mit relativen Pfaden.
+
+**Übung 2 - Wildcards:**
+- Verwenden Sie Wildcards, um Verzeichnisse und Dateien zu erstellen, zu löschen, zu kopieren und umzubenennen.
+
+**Übung 3 - Tilde-Erweiterungen:**
+- Verstehen und anwenden von Tilde-Erweiterungen für Benutzerverzeichnisse.
+
+**Übung 4 - grep, cut, awk:**
+- Anwenden von Befehlen wie grep, cut und awk auf Textdateien, um Muster zu durchsuchen, zu extrahieren und zu manipulieren.
+
+**Übung 5 - Für Fortgeschrittene:**
+- Verstehen und Interpretieren von komplexen Befehlen, die reguläre Ausdrücke verwenden, um bestimmte Muster in Systemausgaben zu finden.
+
+**Übung 6 - stdout, stdin, stderr:**
+- Verstehen und Anwenden von Befehlen zum Umleiten von Ein- und Ausgaben sowie zur Fehlerbehandlung.
+- Verwendung von Pipes (|) zum Weiterleiten von Ausgaben zwischen Befehlen.
+
+Diese Übungen decken grundlegende und fortgeschrittene Konzepte der Arbeit mit der Befehlszeile in Unix-Systemen ab.
+
 # 2024-03-07 | 02 - Bash Grundlagen
 
 ## Linuxbefehle
@@ -9,6 +32,20 @@
 - Variablen, arithmetische Operatoren, Zeichenkettenverarbeitung
 - Kontrollstrukturen: `for`, `while`, `until`, `if`, `case`
 - Praktische Beispiele und Übungen zur Festigung des Verständnisses
+
+##  Script erstellen und ausführen
+1. Terminal öffnen und mit `cd *Verzeichnis*` in das gewünschte Verzeichnis wechseln
+2. Script mit `touch *Dateiname*.sh` erstellen
+3. Script mit `chmod +x *Dateiname*.sh` ausführbar machen
+4. Script mit `./*Dateiname*.sh` ausführen
+
+### Beispiel:
+
+~~~bash
+cd Schreibtisch
+touch test.sh
+chmod +x test.sh
+~~~
 
 ## Rechte und Benutzerverwaltung
 - Zugriffsrechte: `chmod`

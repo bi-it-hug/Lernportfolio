@@ -1,4 +1,8 @@
-# Datensicherheit und Datenschutz
+# 05 - Auskunftsrecht
+
+
+
+# 04 - Datensicherheit und Datenschutz
 
 >[!NOTE]
 Der Unterschied zwischen Datenschutz und Datensicherheit liegt in ihren Schwerpunkten und Zielen. Datensicherheit konzentriert sich auf technische und organisatorische Maßnahmen, um Daten vor Bedrohungen wie Manipulation, unbefugtem Zugriff und Ausfall zu schützen. Die Hauptziele der Datensicherheit, gemäß der CIA-Triad, umfassen Verfügbarkeit, Vertraulichkeit und Integrität der Daten.
@@ -23,7 +27,7 @@ Insgesamt kann man sagen, dass Datensicherheit sich auf technische und organisat
 
 ***
 
-# 2024-03-07 | 03 - Herausforderungen in der digitalen Welt
+# 03 - Herausforderungen in der digitalen Welt
 
 ## Gruppenarbeit
 
