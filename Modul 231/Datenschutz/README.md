@@ -1,6 +1,21 @@
 # 05 - Auskunftsrecht
 
+- Datenschutzgesetz (DSG) gewährt Auskunftsrecht über Bearbeitung von Personendaten
 
+- Personen können Kontrolle über ihre Daten ausüben und ihre Rechte durchsetzen
+- Verantwortlicher muss bei Ausübung des Auskunftsrechts bestimmte Informationen bereitstellen, einschließlich Identität und Kontaktdaten, Details zur Datenbearbeitung und -zweck, Aufbewahrungsdauer, Datenherkunft, mögliche automatisierte Entscheidungen und Empfänger der Daten
+
+- Auskunftsrecht kann ohne Begründung ausgeübt werden
+
+- Auskunft wird in der Regel innerhalb von 30 Tagen kostenlos erteilt, Gebühren können bei unverhältnismäßigem Aufwand anfallen
+
+- Verweigerung, Einschränkung oder Aufschub der Auskunft muss begründet werden
+
+- Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter bietet Musterbrief für Auskunftsbegehren an
+
+- Auskunftsbegehren können elektronisch oder per Post gestellt werden, Verantwortlicher muss angemessene Maßnahmen zum Datenschutz treffen
+
+- Bei Nichterhalt einer Antwort innerhalb von 30 Tagen kann eingeschriebener Brief gesendet werden.
 
 # 04 - Datensicherheit und Datenschutz
 
