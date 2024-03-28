@@ -1,3 +1,27 @@
+# 2024-03-28 | 04 - Bash Aufgaben
+
+## Aufgabe 1
+
+**Aufgabenstellung:**
+
+Erzeugt Benutzer anhand einer Liste von Benutzernamen in einer Textdatei (via Parameter angegebenen). Hinweis: Benutzen Sie `useradd` und `cat`.
+
+**Lösung:**
+
+![Aufgabe 1 Screenshot](screenshots/aufgabe_1.png)
+
+## Aufgabe 2
+
+**Aufgabenstellung:**
+
+Fügt einen Benutzer anhand einer Liste von Gruppen in einer Textdatei (via Parameter angegebenen) den jeweiligen Gruppen hinzu. Hinweis: Benutzen Sie `groupadd` , `usermod` und `cat`. Achtung es gibt für jeden Benutzer jeweils eine `Initial login group` und mehrere `Supplementary groups`.
+
+**Lösung:**
+
+![Aufgabe 2 Screenshot](screenshots/aufgabe_2.png)
+
+***
+
 # 2024-03-14 | 03 - Bash Übungen
 
 **Übung 1 - Repetition: Navigieren in Verzeichnissen:**
