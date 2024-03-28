@@ -1,5 +1,9 @@
 # 05 - Auskunftsrecht
 
+## [Musterbrief Lösung](musterbrief_auskunftsrecht_eigene_daten.pdf)
+
+### Stickpunkte:
+
 - Datenschutzgesetz (DSG) gewährt Auskunftsrecht über Bearbeitung von Personendaten
 
 - Personen können Kontrolle über ihre Daten ausüben und ihre Rechte durchsetzen
@@ -16,6 +20,8 @@
 - Auskunftsbegehren können elektronisch oder per Post gestellt werden, Verantwortlicher muss angemessene Maßnahmen zum Datenschutz treffen
 
 - Bei Nichterhalt einer Antwort innerhalb von 30 Tagen kann eingeschriebener Brief gesendet werden.
+
+***
 
 # 04 - Datensicherheit und Datenschutz
 
