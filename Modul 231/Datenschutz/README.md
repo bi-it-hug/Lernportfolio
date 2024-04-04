@@ -3,12 +3,12 @@
 ## Gewählte Plattform:
 ![YouTube Logo](yt-logo.svg)
 
-- Wo finde ich die Datenschutz-/Nutzungsbestimmungen (URL)?
+- **Wo finde ich die Datenschutz-/Nutzungsbestimmungen (URL)?**
 
-    - [YouTube - Nutzungsbestimmungen](https://www.youtube.com/t/terms)<br>
+    - [YouTube - Nutzungsbestimmungen](https://www.youtube.com/t/terms)
     - [Google - Datenschutzerklärung](https://policies.google.com/privacy?hl=de#infocollect)
 
-- Welche Daten (z.B. Personendaten) werden gespeichert (Auflisten)?
+- **Welche Daten (z.B. Personendaten) werden gespeichert (Auflisten)?**
 
     - **Accountinformationen**:
         - Benutzername
@@ -34,8 +34,8 @@
     - **Werbung und Tracking**:
         - Personalisierte Werbung basierend auf Nutzungsverhalten
 
-- Für was werden die Daten verwendet?
-Werden die Daten weitergegeben? Wenn ja, an wen?
+- **Für was werden die Daten verwendet?
+Werden die Daten weitergegeben? Wenn ja, an wen?**
 
     - **Bereitstellung von Diensten**:
         - Nutzen der Daten für Dienstleistungen wie Suchergebnisse und Empfehlungen von Inhalten.
@@ -58,8 +58,8 @@ Werden die Daten weitergegeben? Wenn ja, an wen?
     - **Schutz von Google, Nutzern und der Öffentlichkeit**:
         - Verwendung von Daten, um Betrug, Missbrauch und Sicherheitsrisiken zu erkennen und zu bekämpfen, um die Sicherheit und Zuverlässigkeit der Dienste zu gewährleisten.
 
-- Darf der Dienst/Service/Plattform meine Bilder/Videos weiterverkaufen?
-Wie können die Daten gelöscht werden?
+- **Darf der Dienst/Service/Plattform meine Bilder/Videos weiterverkaufen?
+Wie können die Daten gelöscht werden?**
 
     - **Weiterverkauf von Bildern/Videos**:
         - Die Datenschutzrichtlinien der jeweiligen Dienstleistung sollten klären, ob Bilder und Videos weiterverkauft werden dürfen. In der Regel behalten sich Dienste das Recht vor, Inhalte zu verwenden, um ihre Dienste zu verbessern oder personalisierte Werbung zu schalten. Es ist ratsam, die Nutzungsbedingungen und Datenschutzrichtlinien zu überprüfen, um sicherzustellen, dass Sie die Bedingungen verstehen.
@@ -144,3 +144,6 @@ In Bezug auf die Thematik selbstfahrender Autos und der Frage der Haftung bei Un
 
 >[!IMPORTANT]
 Insgesamt ist die Frage der Haftung und ethischen Entscheidungsfindung bei Unfällen mit selbstfahrenden Autos eine komplexe und noch nicht vollständig gelöste Problematik, die weiterhin Diskussion und Forschung erfordert.
+
+
+
