@@ -1,3 +1,74 @@
+# Nutzungsbestimmungen
+
+## Gewählte Plattform:
+![YouTube Logo](yt-logo.svg)
+
+- Wo finde ich die Datenschutz-/Nutzungsbestimmungen (URL)?
+
+    - [YouTube - Nutzungsbestimmungen](https://www.youtube.com/t/terms)<br>
+    - [Google - Datenschutzerklärung](https://policies.google.com/privacy?hl=de#infocollect)
+
+- Welche Daten (z.B. Personendaten) werden gespeichert (Auflisten)?
+
+    - **Accountinformationen**:
+        - Benutzername
+        - E-Mail-Adresse
+        - Passwort
+
+    - **Nutzungsdaten**:
+        - Gesehene Videos
+        - Dauer des Video-Konsums
+        - Vorlieben für bestimmte Inhalte
+
+    - **Geräteinformationen**:
+        - Gerätetyp
+        - Betriebssystem
+        - IP-Adresse
+
+    - **Standortdaten**:
+        - Ungefährer Standort (GPS, WLAN, Mobilfunkmasten)
+
+    - **Cookies und ähnliche Technologien**:
+        - Tracking von Interaktionen auf der Plattform
+
+    - **Werbung und Tracking**:
+        - Personalisierte Werbung basierend auf Nutzungsverhalten
+
+- Für was werden die Daten verwendet?
+Werden die Daten weitergegeben? Wenn ja, an wen?
+
+    - **Bereitstellung von Diensten**:
+        - Nutzen der Daten für Dienstleistungen wie Suchergebnisse und Empfehlungen von Inhalten.
+
+    - **Wartung und Verbesserung von Diensten**:
+        - Verwendung der Daten zur Fehlerbehebung und Verbesserung der Dienste basierend auf Nutzungsdaten.
+
+    - **Entwicklung neuer Dienste**:
+        - Nutzung von Erkenntnissen aus vorhandenen Diensten zur Entwicklung neuer Funktionen und Services.
+
+    - **Personalisierung von Diensten und Werbung**:
+        - Anpassung von Inhalten und Werbung basierend auf den Nutzerinteressen und -aktivitäten.
+
+    - **Messung der Leistung**:
+        - Analyse der Daten, um die Nutzung der Dienste zu verstehen und deren Leistung zu bewerten.
+
+    - **Kommunikation mit Benutzern**:
+        - Direkte Kommunikation mit Benutzern, einschließlich Benachrichtigungen über Dienständerungen oder verdächtige Aktivitäten.
+
+    - **Schutz von Google, Nutzern und der Öffentlichkeit**:
+        - Verwendung von Daten, um Betrug, Missbrauch und Sicherheitsrisiken zu erkennen und zu bekämpfen, um die Sicherheit und Zuverlässigkeit der Dienste zu gewährleisten.
+
+- Darf der Dienst/Service/Plattform meine Bilder/Videos weiterverkaufen?
+Wie können die Daten gelöscht werden?
+
+    - **Weiterverkauf von Bildern/Videos**:
+        - Die Datenschutzrichtlinien der jeweiligen Dienstleistung sollten klären, ob Bilder und Videos weiterverkauft werden dürfen. In der Regel behalten sich Dienste das Recht vor, Inhalte zu verwenden, um ihre Dienste zu verbessern oder personalisierte Werbung zu schalten. Es ist ratsam, die Nutzungsbedingungen und Datenschutzrichtlinien zu überprüfen, um sicherzustellen, dass Sie die Bedingungen verstehen.
+
+    - **Löschung von Daten**:
+        - Die meisten Dienste bieten Möglichkeiten, Daten zu löschen. Normalerweise gibt es in den Einstellungen oder Kontoeinstellungen eine Option zur Datenverwaltung oder zum Löschen von Daten. Es ist jedoch wichtig zu beachten, dass das Löschen von Daten nicht immer bedeutet, dass sie vollständig aus den Servern des Dienstes entfernt werden. Einige Daten können aus Backup-Systemen möglicherweise nicht sofort gelöscht werden. Es ist ratsam, die spezifischen Anweisungen des Dienstes zur Löschung von Daten zu befolgen und sich gegebenenfalls direkt an den Dienst zu wenden, um weitere Unterstützung zu erhalten.
+
+***
+
 # 05 - Auskunftsrecht
 
 ## [Musterbrief Lösung](musterbrief_auskunftsrecht_eigene_daten.pdf)
