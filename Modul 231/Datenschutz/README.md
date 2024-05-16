@@ -70,7 +70,7 @@ Git ist ein verteiltes Versionskontrollsystem, das hauptsächlich zur Verwaltung
 ### Grundlegende Konzepte
 1. **Repository (Repo)**: Ein Verzeichnis, das alle Dateien und den kompletten Verlauf eines Projekts enthält.
 2. **Commit**: Eine Momentaufnahme des Projekts. Jeder Commit hat eine eindeutige ID und speichert den aktuellen Stand des Projekts.
-3. **Branch**: Ein paralleler Entwicklungszweig. Der Hauptzweig heißt normalerweise "master" oder "main".
+3. **Branch**: Ein paralleler Entwicklungszweig. Der Hauptzweig heisst normalerweise "master" oder "main".
 4. **Merge**: Das Zusammenführen von Änderungen aus verschiedenen Branches.
 5. **Clone**: Eine Kopie eines existierenden Repositories.
 6. **Remote**: Ein entferntes Repository, normalerweise auf einem Server wie GitHub oder GitLab.
@@ -215,7 +215,7 @@ Werden die Daten weitergegeben? Wenn ja, an wen?**
         - Analyse der Daten, um die Nutzung der Dienste zu verstehen und deren Leistung zu bewerten.
 
     - **Kommunikation mit Benutzern**:
-        - Direkte Kommunikation mit Benutzern, einschließlich Benachrichtigungen über Dienständerungen oder verdächtige Aktivitäten.
+        - Direkte Kommunikation mit Benutzern, einschliesslich Benachrichtigungen über Dienständerungen oder verdächtige Aktivitäten.
 
     - **Schutz von Google, Nutzern und der Öffentlichkeit**:
         - Verwendung von Daten, um Betrug, Missbrauch und Sicherheitsrisiken zu erkennen und zu bekämpfen, um die Sicherheit und Zuverlässigkeit der Dienste zu gewährleisten.
@@ -240,17 +240,17 @@ Wie können die Daten gelöscht werden?**
 - Datenschutzgesetz (DSG) gewährt Auskunftsrecht über Bearbeitung von Personendaten
 
 - Personen können Kontrolle über ihre Daten ausüben und ihre Rechte durchsetzen
-- Verantwortlicher muss bei Ausübung des Auskunftsrechts bestimmte Informationen bereitstellen, einschließlich Identität und Kontaktdaten, Details zur Datenbearbeitung und -zweck, Aufbewahrungsdauer, Datenherkunft, mögliche automatisierte Entscheidungen und Empfänger der Daten
+- Verantwortlicher muss bei Ausübung des Auskunftsrechts bestimmte Informationen bereitstellen, einschliesslich Identität und Kontaktdaten, Details zur Datenbearbeitung und -zweck, Aufbewahrungsdauer, Datenherkunft, mögliche automatisierte Entscheidungen und Empfänger der Daten
 
 - Auskunftsrecht kann ohne Begründung ausgeübt werden
 
-- Auskunft wird in der Regel innerhalb von 30 Tagen kostenlos erteilt, Gebühren können bei unverhältnismäßigem Aufwand anfallen
+- Auskunft wird in der Regel innerhalb von 30 Tagen kostenlos erteilt, Gebühren können bei unverhältnismässigem Aufwand anfallen
 
 - Verweigerung, Einschränkung oder Aufschub der Auskunft muss begründet werden
 
 - Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter bietet Musterbrief für Auskunftsbegehren an
 
-- Auskunftsbegehren können elektronisch oder per Post gestellt werden, Verantwortlicher muss angemessene Maßnahmen zum Datenschutz treffen
+- Auskunftsbegehren können elektronisch oder per Post gestellt werden, Verantwortlicher muss angemessene Massnahmen zum Datenschutz treffen
 
 - Bei Nichterhalt einer Antwort innerhalb von 30 Tagen kann eingeschriebener Brief gesendet werden.
 
@@ -259,7 +259,7 @@ Wie können die Daten gelöscht werden?**
 ## 04 - Datensicherheit und Datenschutz
 
 >[!NOTE]
-Der Unterschied zwischen Datenschutz und Datensicherheit liegt in ihren Schwerpunkten und Zielen. Datensicherheit konzentriert sich auf technische und organisatorische Maßnahmen, um Daten vor Bedrohungen wie Manipulation, unbefugtem Zugriff und Ausfall zu schützen. Die Hauptziele der Datensicherheit, gemäß der CIA-Triad, umfassen Verfügbarkeit, Vertraulichkeit und Integrität der Daten.
+Der Unterschied zwischen Datenschutz und Datensicherheit liegt in ihren Schwerpunkten und Zielen. Datensicherheit konzentriert sich auf technische und organisatorische Massnahmen, um Daten vor Bedrohungen wie Manipulation, unbefugtem Zugriff und Ausfall zu schützen. Die Hauptziele der Datensicherheit, gemäss der CIA-Triad, umfassen Verfügbarkeit, Vertraulichkeit und Integrität der Daten.
 
 ### Datensicherheit
 
@@ -277,7 +277,7 @@ Datenschutz hingegen bezieht sich auf den Schutz personenbezogener Daten und umf
 
 
 >[!IMPORTANT]
-Insgesamt kann man sagen, dass Datensicherheit sich auf technische und organisatorische Maßnahmen konzentriert, um Daten zu schützen, während Datenschutz sich auf rechtliche und ethische Aspekte des Schutzes personenbezogener Daten konzentriert.
+Insgesamt kann man sagen, dass Datensicherheit sich auf technische und organisatorische Massnahmen konzentriert, um Daten zu schützen, während Datenschutz sich auf rechtliche und ethische Aspekte des Schutzes personenbezogener Daten konzentriert.
 
 ***
 
@@ -289,17 +289,17 @@ Insgesamt kann man sagen, dass Datensicherheit sich auf technische und organisat
 In Bezug auf die Thematik selbstfahrender Autos und der Frage der Haftung bei Unfällen stehen verschiedene ethische und rechtliche Fragen im Raum.
 
 #### 1. Haftung
-- Die Frage nach der Haftung bei Unfällen mit selbstfahrenden Autos ist komplex und noch nicht abschließend geklärt. Es könnte sein, dass die Hersteller der Fahrzeuge, die Softwareentwickler oder sogar die Fahrzeughalter in Frage kommen könnten, je nach den Umständen des Unfalls und den geltenden Gesetzen.
+- Die Frage nach der Haftung bei Unfällen mit selbstfahrenden Autos ist komplex und noch nicht abschliessend geklärt. Es könnte sein, dass die Hersteller der Fahrzeuge, die Softwareentwickler oder sogar die Fahrzeughalter in Frage kommen könnten, je nach den Umständen des Unfalls und den geltenden Gesetzen.
 
 #### 2. Ethik:
-- Im Szenario eines bevorstehenden Unfalls stellt sich die ethische Frage, ob das Auto die Insassen schützen sollte oder die Fußgänger. Diese Entscheidung könnte Leben retten, aber auch moralische Dilemmata aufwerfen.
+- Im Szenario eines bevorstehenden Unfalls stellt sich die ethische Frage, ob das Auto die Insassen schützen sollte oder die Fussgänger. Diese Entscheidung könnte Leben retten, aber auch moralische Dilemmata aufwerfen.
 
-- Die erste Möglichkeit, in einen Baum zu fahren, um den Fußgänger zu retten, könnte ethisch gerechtfertigt sein, da sie die Lebensrettung priorisiert, aber gleichzeitig die Insassen gefährdet.
+- Die erste Möglichkeit, in einen Baum zu fahren, um den Fussgänger zu retten, könnte ethisch gerechtfertigt sein, da sie die Lebensrettung priorisiert, aber gleichzeitig die Insassen gefährdet.
 
-- Die zweite Möglichkeit, nicht auszuweichen, könnte die Insassen schützen, aber auf Kosten des Fußgängers gehen.
+- Die zweite Möglichkeit, nicht auszuweichen, könnte die Insassen schützen, aber auf Kosten des Fussgängers gehen.
 
 #### 3. Entscheidungsfindung:
-- Selbstfahrende Autos müssen möglicherweise in der Lage sein, in Echtzeit komplexe ethische Entscheidungen zu treffen. Die Programmierung dieser Entscheidungen könnte eine große Herausforderung darstellen und erfordert möglicherweise eine umfassende rechtliche und ethische Rahmenbedingungen.
+- Selbstfahrende Autos müssen möglicherweise in der Lage sein, in Echtzeit komplexe ethische Entscheidungen zu treffen. Die Programmierung dieser Entscheidungen könnte eine grosse Herausforderung darstellen und erfordert möglicherweise eine umfassende rechtliche und ethische Rahmenbedingungen.
 
 #### 4. Gesellschaftliche Debatte:
 - Diese Fragen erfordern eine breite gesellschaftliche Debatte und möglicherweise neue Gesetze oder Richtlinien, um solche Situationen angemessen zu regeln.
