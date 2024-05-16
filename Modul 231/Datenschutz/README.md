@@ -4,16 +4,23 @@ Symmetrische und asymmetrische Verschlüsselung sind zwei grundlegende Methoden 
 
 **Symmetrische Verschlüsselung:**
 - **Prinzip:** Ein einzelner Schlüssel wird sowohl für die Verschlüsselung als auch für die Entschlüsselung der Daten verwendet.
+
 - **Schlüsselaustausch:** Der Schlüssel muss sicher zwischen Sender und Empfänger ausgetauscht werden.
+
 - **Beispiele:** AES (Advanced Encryption Standard), DES (Data Encryption Standard).
+
 - **Vorteil:** Schneller und weniger rechenintensiv.
+
 - **Nachteil:** Der sichere Austausch des Schlüssels kann problematisch sein.
 
 **Asymmetrische Verschlüsselung:**
 - **Prinzip:** Ein Paar aus einem öffentlichen Schlüssel (für die Verschlüsselung) und einem privaten Schlüssel (für die Entschlüsselung) wird verwendet.
+
 - **Schlüsselaustausch:** Der öffentliche Schlüssel kann frei verteilt werden, während der private Schlüssel geheim bleibt.
+
 - **Beispiele:** RSA, ECC (Elliptic Curve Cryptography).
 - **Vorteil:** Kein sicherer Schlüsselaustausch erforderlich, da nur der öffentliche Schlüssel verbreitet wird.
+
 - **Nachteil:** Langsamer und rechenintensiver im Vergleich zur symmetrischen Verschlüsselung.
 
 In der Praxis werden oft beide Methoden kombiniert verwendet: asymmetrische Verschlüsselung für den Schlüsselaustausch und symmetrische Verschlüsselung für die eigentliche Datenübertragung (z.B. in TLS/SSL).
@@ -29,6 +36,7 @@ Die Caesar-Verschlüsselung, benannt nach Julius Caesar, ist eine einfache und k
 
 2. **Verschlüsselung**:
    - Die Verschiebung (Shift) wird durch eine Zahl \( k \) bestimmt, die die Anzahl der Positionen angibt, um die jeder Buchstabe im Alphabet verschoben wird.
+   
    - Beispiel bei \( k = 3 \): A wird zu D, B wird zu E, C wird zu F usw.
 
 3. **Entschlüsselung**:
