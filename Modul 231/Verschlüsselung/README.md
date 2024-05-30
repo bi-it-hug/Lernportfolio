@@ -1,29 +1,45 @@
 # 02 - Verschlüsselung
 
-Symmetrische und asymmetrische Verschlüsselung sind zwei grundlegende Methoden der Kryptographie:
+## 03 - Hash
 
-**Symmetrische Verschlüsselung:**
-- **Prinzip:** Ein einzelner Schlüssel wird sowohl für die Verschlüsselung als auch für die Entschlüsselung der Daten verwendet.
+Ein Hash ist sozusagen wie eine feste Identifikationsnummer einer Nachricht oder Datei.
 
-- **Schlüsselaustausch:** Der Schlüssel muss sicher zwischen Sender und Empfänger ausgetauscht werden.
+In diesem Python-Beispiel ist ein Code, der eine zufällige (aber feste) Hash-Nummer bekommen hat:
 
-- **Beispiele:** AES (Advanced Encryption Standard), DES (Data Encryption Standard).
+~~~py
+print('Good Morning!')
+~~~
+> Datei geändert am 30.05.2024 <br>
+Hash >> 195038
 
-- **Vorteil:** Schneller und weniger rechenintensiv.
+Sobald wir aber auch nur irgendetwas an der Datei ändern, ändert sich der Hash-Code:
 
-- **Nachteil:** Der sichere Austausch des Schlüssels kann problematisch sein.
+~~~py
+print('Good Morning')
+~~~
+> Datei geändert am 31.05.2024 <br>
+Hash >> 512840
 
-**Asymmetrische Verschlüsselung:**
-- **Prinzip:** Ein Paar aus einem öffentlichen Schlüssel (für die Verschlüsselung) und einem privaten Schlüssel (für die Entschlüsselung) wird verwendet.
+Wird die Datei aber wieder in den exakten vorherigen Stand geändert, dann wird nicht ein neuer Hash-Code generiert, sondern der alte Code wird wieder hervorgeholt:
 
-- **Schlüsselaustausch:** Der öffentliche Schlüssel kann frei verteilt werden, während der private Schlüssel geheim bleibt.
+~~~py
+print('Good Morning!')
+~~~
+> Datei geändert am 01.06.2024 <br>
+Hash >> 195038
 
-- **Beispiele:** RSA, ECC (Elliptic Curve Cryptography).
-- **Vorteil:** Kein sicherer Schlüsselaustausch erforderlich, da nur der öffentliche Schlüssel verbreitet wird.
+### Wie funktioniert ein Hash?
 
-- **Nachteil:** Langsamer und rechenintensiver im Vergleich zur symmetrischen Verschlüsselung.
+Ein Hash ist das Ergebnis einer Hashfunktion, die eine Eingabe (z.B. eine Datei oder eine Nachricht) nimmt und sie in einen festen Wert, den sogenannten Hash-Wert oder Hash-Code, umwandelt. Dieser Wert ist normalerweise eine feste Länge und repräsentiert die Daten in einer Weise, die praktisch einzigartig ist. Änderungen an der Eingabe, auch nur geringfügige, führen zu einem völlig anderen Hash-Wert.
 
-In der Praxis werden oft beide Methoden kombiniert verwendet: asymmetrische Verschlüsselung für den Schlüsselaustausch und symmetrische Verschlüsselung für die eigentliche Datenübertragung (z.B. in TLS/SSL).
+### Eigenschaften von Hash-Funktionen
+
+1. **Deterministisch**: Die gleiche Eingabe führt immer zur gleichen Ausgabe.
+2. **Schnell zu berechnen**: Der Hash-Wert kann schnell berechnet werden.
+3. **Vorbildlich gleichmäßig**: Kleine Änderungen an der Eingabe führen zu drastischen Änderungen im Hash-Wert.
+4. **Kollisionsresistent**: Es ist extrem unwahrscheinlich, dass zwei verschiedene Eingaben den gleichen Hash-Wert erzeugen.
+
+Hash-Funktionen werden in vielen Bereichen der Informatik verwendet, darunter in der Kryptographie, bei Datenstrukturen wie Hash-Tabellen und zur Datenintegrität.
 
 ***
 
@@ -65,3 +81,31 @@ Die Caesar-Verschlüsselung, benannt nach Julius Caesar, ist eine einfache und k
 Die Caesar-Verschlüsselung ist ein grundlegendes Beispiel für Substitutionsverschlüsselung und wird oft als Einstieg in die Kryptographie verwendet.
 
 ***
+
+Symmetrische und asymmetrische Verschlüsselung sind zwei grundlegende Methoden der Kryptographie:
+
+**Symmetrische Verschlüsselung:**
+- **Prinzip:** Ein einzelner Schlüssel wird sowohl für die Verschlüsselung als auch für die Entschlüsselung der Daten verwendet.
+
+- **Schlüsselaustausch:** Der Schlüssel muss sicher zwischen Sender und Empfänger ausgetauscht werden.
+
+- **Beispiele:** AES (Advanced Encryption Standard), DES (Data Encryption Standard).
+
+- **Vorteil:** Schneller und weniger rechenintensiv.
+
+- **Nachteil:** Der sichere Austausch des Schlüssels kann problematisch sein.
+
+**Asymmetrische Verschlüsselung:**
+- **Prinzip:** Ein Paar aus einem öffentlichen Schlüssel (für die Verschlüsselung) und einem privaten Schlüssel (für die Entschlüsselung) wird verwendet.
+
+- **Schlüsselaustausch:** Der öffentliche Schlüssel kann frei verteilt werden, während der private Schlüssel geheim bleibt.
+
+- **Beispiele:** RSA, ECC (Elliptic Curve Cryptography).
+- **Vorteil:** Kein sicherer Schlüsselaustausch erforderlich, da nur der öffentliche Schlüssel verbreitet wird.
+
+- **Nachteil:** Langsamer und rechenintensiver im Vergleich zur symmetrischen Verschlüsselung.
+
+In der Praxis werden oft beide Methoden kombiniert verwendet: asymmetrische Verschlüsselung für den Schlüsselaustausch und symmetrische Verschlüsselung für die eigentliche Datenübertragung (z.B. in TLS/SSL).
+
+***
+
