@@ -10,7 +10,10 @@ from datetime import datetime
 
 
 
-def import_data(import_location, data):
+def get_data(import_location):
+    
+    data = []
+    
     with open(import_location, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         
@@ -40,7 +43,7 @@ def import_data(import_location, data):
 
 
 
-def export_data(export_location, data, fields):
+def set_data(export_location, data, fields):
     
     delimiter = '|'
     quotechar = '"'
@@ -52,72 +55,50 @@ def export_data(export_location, data, fields):
         
         for entry in data:
             writer.writerow({field: entry[field] for field in fields})
+            
 
 
-
-def append_data_for_export(exported_data, email, password):
-    exported_data.append({
+def append_data_for_export(export_data, email, password):
+    export_data.append({
         'email': email,
         'password': password
     })
 
 
-
-def generate_password(length, pieces):
-    
-    password = []
-    allowed_special_chars = '#$%&@'
+def create_password(length, pieces, password):
     
     allowed_characters = (
         string.ascii_uppercase +
         string.ascii_lowercase +
         string.digits +
-        allowed_special_chars
+        '#$%&@'
     )
     
-    for _ in range(0, pieces, 1):
-        
-        piece = ''.join(random.choice(allowed_characters) for _ in range(length))
-        password.append(piece)
+    password = [
+        ''.join(random.choices(allowed_characters, k=length))
+        for _ in range(pieces)
+    ]
     
-    password = '-'.join(password)
-    return password
-    
+    return '-'.join(password)
 
+    
 
 def replace_uncommon_chars(x_name, uncommon_chars):
-    
-    result = ''
-    
-    for char in x_name:
-        result += uncommon_chars.get(char, char)
-        
-    return result.replace("'", '')
+    return ''.join(uncommon_chars.get(char, char) for char in x_name).replace("'", '')
 
 
 
-def generate_email(first_name, last_name, uncommon_chars):
+def create_email(first_name, last_name, uncommon_chars):
     
     first_name = replace_uncommon_chars(first_name, uncommon_chars)
     last_name = replace_uncommon_chars(last_name, uncommon_chars)
     
-    email = f'{first_name.replace(' ', '')}.{last_name.replace(' ', '')}@edu.tbz.ch'.lower()
-    return email
+    return f'{first_name.replace(' ', '')}.{last_name.replace(' ', '')}@edu.tbz.ch'.lower()
 
 
 
 def get_time(format):
-    
-    current_datetime = datetime.now()
-    
-    match(format):
-        case ['year', 'month', 'day', 'hour', 'minute']:
-            formatted_datetime = current_datetime.strftime('%Y-%m-%d_%H-%M')
-            
-        case ['day', 'month', 'year']:
-            formatted_datetime = current_datetime.strftime('%d-%m-%Y')
-            
-    return formatted_datetime
+    return datetime.now().strftime(format)
 
 
 
@@ -130,17 +111,7 @@ def create_zip_file(zip_name, folders):
     
 
 
-def create_mail_message(date, first_name, last_name, gender, street, street_number, zip, city, email, password):
-    
-    match(gender):
-        case 'Male':
-            salutation = 'Lieber'
-            
-        case 'Female':
-            salutation = 'Liebe'
-            
-        case _:
-            salutation = 'Liebe/r'
+def create_letter(date, first_name, last_name, gender, street, street_number, zip, city, email, password, author):
     
     message = f'''
 Technische Berufsschule Zürich
@@ -154,7 +125,7 @@ Zürich, den {date}
                         {zip} {city}
 								
 
-{salutation} {first_name}
+{define_salutation(gender)} {first_name}
 
 Es freut uns, Sie im neuen Schuljahr begrüssen zu dürfen.
 
@@ -168,7 +139,7 @@ Passwort:       {password}
 
 Mit freundlichen Grüssen
 
-Lorenzo Hug
+{author['first_name']} {author['last_name']}
 (TBZ-IT-Service)
 
 
@@ -180,24 +151,26 @@ admin.it@tbz.ch, Abt. IT: +41 44 446 96 60
 
 
 
-def send_mail(subject, body, attachment, sender_email, sender_password, receiver_email):
+def send_mail(sender_email, sender_password, receiver_email, mail_subject, mail_body, mail_attachment):
+    
     msg = EmailMessage()
-    msg.set_content(body)   
-    msg['Subject'] = subject
+    msg.set_content(mail_body)
+    msg['Subject'] = mail_subject
     msg['From'] = sender_email
-    msg['to'] = receiver_email
+    msg['To'] = receiver_email
 
-    mime_type, _ = mimetypes.guess_type(attachment)
+    mime_type, _ = mimetypes.guess_type(mail_attachment)
     if mime_type is None:
         mime_type = 'application/octet-stream'
     
     main_type, sub_type = mime_type.split('/', 1)
     
-    with open(attachment, 'rb') as file:
-        msg.add_attachment(file.read(), maintype=main_type, subtype=sub_type, filename=attachment)
+    with open(mail_attachment, 'rb') as file:
+        msg.add_attachment(file.read(), maintype=main_type, subtype=sub_type, filename=mail_attachment)
         
     try:
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+        with smtplib.SMTP('smtp.gmail.com', 587) as server:
+            server.starttls()
             server.login(sender_email, sender_password)
             server.send_message(msg)
         
@@ -207,8 +180,24 @@ def send_mail(subject, body, attachment, sender_email, sender_password, receiver
         print(f'Failed to send mail: {error}')
 
 
+
+def define_salutation(gender):
+        
+    match(gender):
+        case 'Male':
+            salutation = 'Lieber'
+            
+        case 'Female':
+            salutation = 'Liebe'
+            
+        case _:
+            salutation = 'Liebe/r'
+    
+    return salutation
+
+
   
-def print_all(data):
+def get_info(data):
     
     width = 45
     
@@ -226,6 +215,22 @@ def print_all(data):
 
 
 def main():
+    
+    author = {
+        'first_name': 'Lorenzo',
+        'last_name': 'Hug',
+        'emails': {
+            'icloud': {
+                'address': 'lorenzo.hug@icloud.com',
+                'password': ''
+            },
+            'outlook': {
+                'address': 'sibby.hug@outlook.com',
+                'password': 'Doom6Is6Eternal6'
+            }
+        }
+
+    }
     
     uncommon_chars = {
         'Á': 'A',
@@ -312,19 +317,19 @@ def main():
         '’': "'"
     }
     
-    imported_data = []
-    exported_data = []
-    
     import_location = 'import/MOCK_DATA.CSV'
-    export_location = f'export/{get_time(['year', 'month', 'day', 'hour', 'minute'])}.csv'
+    export_location = f'export/{get_time('%Y-%m-%d_%H-%M')}.csv'
     
+    import_data = get_data(import_location)
+    export_data = []
+    
+    password = []
     password_piece_length = 6
     password_pieces_amount = 3
     
-    csv_data = import_data(import_location, imported_data)
+    archive_file_name = f'{get_time('%Y-%m-%d')}_newMailadr_{author['last_name'].lower()}.zip'
     
-    
-    for entry in csv_data:
+    for entry in import_data:
         
         first_name = entry['first_name']
         last_name = entry['last_name']
@@ -333,42 +338,35 @@ def main():
         street_number = entry['street_number']
         zip = entry['zip']
         city = entry['city']
+        email = entry['email'] = create_email(first_name, last_name, uncommon_chars)
+        password = entry['password'] = create_password(password_piece_length, password_pieces_amount, password)
         
-        entry['email'] = generate_email(first_name, last_name, uncommon_chars)
-        entry['password'] = generate_password(password_piece_length, password_pieces_amount)
-        
-        email = entry['email']
-        password = entry['password']
-        
-        append_data_for_export(exported_data, email, password)
-        create_mail_message(get_time(['day', 'month', 'year']), first_name, last_name, gender, street, street_number, zip, city, email, password)
+        create_letter(get_time('%d-%m-%Y'), first_name, last_name, gender, street, street_number, zip, city, email, password, author)
+        append_data_for_export(export_data, email, password)
     
-    archive_file_name = 'archive.zip'
-    
+    set_data(export_location, export_data, ['email', 'password'])
     create_zip_file(archive_file_name, ['export', 'letters'])
-    export_data(export_location, exported_data, ['email', 'password'])
     
-    new_mails_amount = len(exported_data)
-    
-    sender_email = 'lorenzo.hug@bsfh-lernende.ch'
-    sender_password = 'HuLo981'
-    receiver_email = 'lorenzo.hug@icloud.com'
-    
-    mail_subject = f'Neue TBZ-Mailadressen {new_mails_amount}'
-    mail_body = f'''
-Lieber Testmann
+    send_mail(
+        sender_email=author['emails']['outlook']['address'],
+        sender_password='tbub xetp ppse mjdv',
+        receiver_email=author['emails']['icloud']['address'],
+        mail_subject=f'Neue TBZ-Mailadressen {len(export_data)}',
+        mail_body=f'''
+    Lieber Testmann
 
-Die Emailadressen-Generierung ist beendet. 
-Es wurden {new_mails_amount} erzeugt.
+    Die Emailadressen-Generierung ist beendet. 
+    Es wurden {len(export_data)} erzeugt.
 
-Bei Fragen kontaktiere bitte lorenzo.hug@bsfh-lernende.ch
+    Bei Fragen kontaktiere bitte {author['emails']['outlook']['address']}.
 
-Gruss Lorenzo Hug
-'''
-    mail_attachment = archive_file_name
+    Gruss {author['first_name']} {author['last_name']}
+    ''',
+        mail_attachment=archive_file_name
+    )
     
-    # send_mail(mail_subject, mail_body, mail_attachment, sender_email, sender_password, receiver_email)
+    #get_info(import_data)
     
-    
+
 
 main()

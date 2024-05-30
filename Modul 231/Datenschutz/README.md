@@ -27,6 +27,12 @@ In der Praxis werden oft beide Methoden kombiniert verwendet: asymmetrische Vers
 
 ***
 
+## 03 - Hash
+
+
+
+***
+
 ## 01 - Caesar
 
 Die Caesar-Verschlüsselung, benannt nach Julius Caesar, ist eine einfache und klassische Methode der Substitutionsverschlüsselung. Hier sind die wichtigsten Punkte über die Caesar-Verschlüsselung:
