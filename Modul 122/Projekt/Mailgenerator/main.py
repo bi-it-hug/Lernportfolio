@@ -8,6 +8,22 @@ from datetime import datetime
 
 
 
+def get_csv():
+    
+    url = 'https://haraldmueller.ch/schueler/m122_projektunterlagen/b/MOCK_DATA.csv'
+    directory = 'import/'
+    
+    os.makedirs(directory, exist_ok=True)
+    file_path = os.path.join(directory, 'mock_data.csv')
+    
+    response = requests.get(url)
+    with open(file_path, 'wb') as file:
+        file.write(response.content)
+        
+    return file_path
+
+
+
 def get_data(import_location):
     
     data = []
@@ -57,11 +73,12 @@ def set_data(export_location, data, fields):
 
 
 def append_data_for_export(export_data, email, password):
+    
     export_data.append({
         'email': email,
         'password': password
     })
-
+    
 
 
 def create_password(length, pieces):
@@ -132,7 +149,7 @@ Damit Sie am ersten Tag sich in unsere Systeme einloggen
 können, erhalten Sie hier Ihre neue Emailadresse und Ihr
 Initialpasswort, das Sie beim ersten Login wechseln müssen.
 
-Emailadresse:   {email}
+E-Mail:         {email}
 Passwort:       {password}
 
 
@@ -154,13 +171,13 @@ def define_salutation(gender):
         
     match(gender):
         case 'Male':
-            salutation = 'Lieber'
+            salutation = 'Sehr geehrter Herr'
             
         case 'Female':
-            salutation = 'Liebe'
+            salutation = 'Sehr geehrte Frau'
             
         case _:
-            salutation = 'Liebe/r'
+            salutation = 'Sehr geehrte*r'
     
     return salutation
 
@@ -183,22 +200,24 @@ def get_info(data):
 
 
 
-def send_mail(archive_file_name, amount_of_new_mails, author, server_url):
+def send_mail(archive_file_name, amount_of_new_mails, author, server_url, generation_date):
     
     mail_data = {
-        'to': f'{author['mails']['school']}',
-        'subject': f'Neue TBZ-Mailadressen {amount_of_new_mails}',
+        'from': author['mails']['school'],
+        'to': author['mails']['outlook'],
+        'subject': f'Neue TBZ-E-Mail-Adressen: {amount_of_new_mails}',
         'message': f'''
-Lieber Lorenzo\n
-\n
-Die Emailadressen-Generierung ist beendet. 
-Es wurden {amount_of_new_mails} erzeugt.\n
-\n
-Bei Fragen kontaktiere bitte sibby.hug@outlook.com\n
-\n
-Gruss {author['first_name']} {author['last_name']}
-        ''',
-        'from': f'{author['mails']['outlook']}'
+{define_salutation(author['gender'])} {author['last_name']}
+
+die Generierung der E-Mail-Adressen wurde um {generation_date} abgeschlossen. Insgesamt wurden {amount_of_new_mails} neue Adressen erstellt.
+Im Anhang finden Sie alle Briefe, sowie eine Tabelle mit allen generierten Adressen.
+
+Bei Fragen können Sie mich gerne unter {author['mails']['school']} kontaktieren.
+
+Freundliche Grüsse
+
+{author['first_name']} {author['last_name']}
+        '''
     }
 
     archive_file = {'attachment': open(archive_file_name, 'rb')}
@@ -256,11 +275,11 @@ def main():
     author = {
         'first_name': 'Lorenzo',
         'last_name': 'Hug',
+        'gender': 'Male',
         'mails': {
-                'outlook': 'sibby.hug@outlook.com',
-                'icloud': 'lorenzo.hug@icloud.com',
-                'school': 'lorenzo.hug@bsfh-lernende.ch',
-                'work': 'lorenzo.hug@espas.ch'
+            'outlook': 'sibby.hug@outlook.com',
+            'school': 'lorenzo.hug@bsfh-lernende.ch',
+            'work': 'lorenzo.hug@espas.ch'
         }
     }
     
@@ -350,13 +369,15 @@ def main():
         ' ': ''
     }
     
+    generation_date = get_time('%H:%M:%S')
+    
     password_piece_length = 6
     password_pieces_amount = 3
     
     server_url = 'https://mailgenerator.bm-it.ch/mail.php'
     archive_file_name = f'{get_time('%Y-%m-%d')}_newMailadr_{author['last_name'].lower()}.zip'
     
-    import_location = 'import/MOCK_DATA.CSV'
+    import_location = get_csv()
     export_location = f'export/{get_time('%Y-%m-%d_%H-%M')}.csv'
 
     import_data = get_data(import_location)
@@ -364,9 +385,7 @@ def main():
     
     set_data(export_location, export_data, ['email', 'password'])
     create_zip_file(archive_file_name, ['export', 'letters'])
-    
-    send_mail(archive_file_name, len(import_data), author, server_url)
-    #get_info(import_data)
+    send_mail(archive_file_name, len(import_data), author, server_url, generation_date)
 
 
 
