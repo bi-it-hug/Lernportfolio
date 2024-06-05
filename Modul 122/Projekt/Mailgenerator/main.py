@@ -139,7 +139,7 @@ Zürich, den {date}
                         {first_name} {last_name}
                         {street} {street_number}
                         {zip_code} {city}
-								
+                                
 
 {define_salutation(gender)} {first_name}
 
@@ -162,14 +162,15 @@ Mit freundlichen Grüssen
 admin.it@tbz.ch, Abt. IT: +41 44 446 96 60
 '''
 
+    os.makedirs('letters', exist_ok=True)
     with open(f'letters/{email}.brf', mode='w', encoding='utf-8') as file:
         file.write(message)
 
 
 
 def define_salutation(gender):
-        
-    match(gender):
+    
+    match gender:
         case 'Male':
             salutation = 'Sehr geehrter Herr'
             
@@ -178,30 +179,24 @@ def define_salutation(gender):
             
         case _:
             salutation = 'Sehr geehrte*r'
-    
+            
     return salutation
 
 
   
 def get_info(data):
-    
     width = 45
-    
     for entry in data:
-        
-        print(f'{'':-^{width}}')
-        
+        print(f'{"":-^{width}}')
         for x, y in entry.items():
             length = width - len(x) - 2
             y = '' if y is None else y
             print(f'{x}: {y:>{length}}')
-            
-        print(f'{'':-^{width}}\n')
+        print(f'{"":-^{width}}\n')
 
 
 
 def send_mail(archive_file_name, amount_of_new_mails, author, server_url, generation_date):
-    
     mail_data = {
         'from': author['mails']['school'],
         'to': author['mails']['outlook'],
@@ -220,10 +215,11 @@ Freundliche Grüsse
         '''
     }
 
-    archive_file = {'attachment': open(archive_file_name, 'rb')}
-    response = requests.post(server_url, data=mail_data, files=archive_file)
-    
     try:
+        with open(archive_file_name, 'rb') as f:
+            archive_file = {'attachment': f}
+            response = requests.post(server_url, data=mail_data, files=archive_file)
+        
         response.raise_for_status()
         result = response.json()
         
@@ -241,9 +237,6 @@ Freundliche Grüsse
         
     except ValueError:
         print(f"Ungültige JSON-Antwort: {response.text}")
-        
-    finally:
-        archive_file['attachment'].close()
 
 
 
@@ -374,11 +367,13 @@ def main():
     password_piece_length = 6
     password_pieces_amount = 3
     
-    server_url = 'https://mailgenerator.bm-it.ch/mail.php'
+    server_url = 'https://mailgenerator.bm-it.ch/mail_python.php'
     archive_file_name = f'{get_time('%Y-%m-%d')}_newMailadr_{author['last_name'].lower()}.zip'
     
     import_location = get_csv()
     export_location = f'export/{get_time('%Y-%m-%d_%H-%M')}.csv'
+    
+    os.makedirs('export', exist_ok=True)
 
     import_data = get_data(import_location)
     export_data = process_entries(import_data, uncommon_chars, author, password_piece_length, password_pieces_amount)

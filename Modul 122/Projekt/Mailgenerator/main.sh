@@ -13,7 +13,7 @@ AUTHOR_GENDER="Male"
 AUTHOR_EMAIL_OUTLOOK="sibby.hug@outlook.com"
 AUTHOR_EMAIL_SCHOOL="lorenzo.hug@bsfh-lernende.ch"
 AUTHOR_EMAIL_WORK="lorenzo.hug@espas.ch"
-SERVER_URL="https://mailgenerator.bm-it.ch/mail.php"
+SERVER_URL="https://mailgenerator.bm-it.ch/mail_bash.php"
 PASSWORD_PIECE_LENGTH=6
 PASSWORD_PIECES_AMOUNT=3
 DELIMITER="|"
@@ -176,17 +176,18 @@ send_mail() {
     esac
 
     local mail_data
-    mail_data=$(cat <<EOF
-{
-    "from": "$author_email_school",
-    "to": "$author_email_outlook",
-    "subject": "Neue TBZ-E-Mail-Adressen: $amount_of_new_mails",
-    "message": "$salutation $author_last_name,\\n\\ndie Generierung der E-Mail-Adressen wurde um $generation_date abgeschlossen. Insgesamt wurden $amount_of_new_mails neue Adressen erstellt.\\nIm Anhang finden Sie alle Briefe, sowie eine Tabelle mit allen generierten Adressen.\\n\\nBei Fragen können Sie mich gerne unter $author_email_school kontaktieren.\\n\\nFreundliche Grüsse\\n\\n$author_first_name $author_last_name"
-}
-EOF
-    )
+    mail_data=$(jq -n --arg from "$author_email_school" \
+                      --arg to "$author_email_outlook" \
+                      --arg subject "Neue TBZ-E-Mail-Adressen: $amount_of_new_mails" \
+                      --arg message "$salutation $author_last_name,\n\ndie Generierung der E-Mail-Adressen wurde um $generation_date abgeschlossen. Insgesamt wurden $amount_of_new_mails neue Adressen erstellt.\nIm Anhang finden Sie alle Briefe, sowie eine Tabelle mit allen generierten Adressen.\n\nBei Fragen können Sie mich gerne unter $author_email_school kontaktieren.\n\nFreundliche Grüsse\n\n$author_first_name $author_last_name" \
+                      '{from: $from, to: $to, subject: $subject, message: $message}')
 
-    curl -F "mail_data=$mail_data" -F "attachment=@$archive_file_name" "$server_url"
+    echo "Sending mail with the following payload:"
+    echo "$mail_data" | jq .
+
+    curl -X POST -F "mail_data=$mail_data" \
+         -F "attachment=@$archive_file_name" \
+         "$server_url"
 }
 
 process_entries() {
