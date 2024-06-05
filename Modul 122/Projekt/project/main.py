@@ -3,12 +3,8 @@ import csv
 import random
 import string
 import zipfile
-import smtplib
+import requests
 from datetime import datetime
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email import encoders
 
 
 
@@ -68,7 +64,7 @@ def append_data_for_export(export_data, email, password):
 
 
 
-def create_password(length, pieces, password):
+def create_password(length, pieces):
     
     allowed_characters = (
         string.ascii_uppercase +
@@ -187,54 +183,71 @@ def get_info(data):
 
 
 
-def send_mail(archive_file_name, amount_of_new_mails, author):
+def send_mail(archive_file_name, amount_of_new_mails, author, server_url):
     
-    # Email server configuration
-    smtp_server = 'test.mailgenerator.com'
-    smtp_port = 25
-
-    # Email details
-    from_address = 'sibby.hug@outlook.com'
-    to_address = 'lorenzo.hug@icloud.com'
-    subject = f'Neue TBZ-Mailadressen {amount_of_new_mails}'
-    body = f'''
-Lieber Lorenzo,
-
-Die Emailadressen-Generierung ist beendet.
-Es wurden {amount_of_new_mails} erzeugt.
-
-Bei Fragen kontaktiere bitte lorenzo.hug@bsfh-lernende.ch
-
+    mail_data = {
+        'to': f'{author['mails']['school']}',
+        'subject': f'Neue TBZ-Mailadressen {amount_of_new_mails}',
+        'message': f'''
+Lieber Lorenzo\n
+\n
+Die Emailadressen-Generierung ist beendet. 
+Es wurden {amount_of_new_mails} erzeugt.\n
+\n
+Bei Fragen kontaktiere bitte sibby.hug@outlook.com\n
+\n
 Gruss {author['first_name']} {author['last_name']}
-    '''
+        ''',
+        'from': f'{author['mails']['outlook']}'
+    }
 
-    # Create the MIME message
-    msg = MIMEMultipart()
-    msg['From'] = from_address
-    msg['To'] = to_address
-    msg['Subject'] = subject
-
-    # Attach the body text
-    msg.attach(MIMEText(body, 'plain'))
-
-    # Attach the file
-    with open(archive_file_name, 'rb') as attachment:
-        mime_base = MIMEBase('application', 'octet-stream')
-        mime_base.set_payload(attachment.read())
-        encoders.encode_base64(mime_base)
-        mime_base.add_header('Content-Disposition', f'attachment; filename={archive_file_name}')
-        msg.attach(mime_base)
-
+    archive_file = {'attachment': open(archive_file_name, 'rb')}
+    response = requests.post(server_url, data=mail_data, files=archive_file)
+    
     try:
-        # Connect to the server and send the email
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.send_message(msg)
-        server.quit()
-
-        print("Email sent successfully")
+        response.raise_for_status()
+        result = response.json()
         
-    except Exception as e:
-        print(f"Failed to send email: {e}")
+        if result['status'] == 'success':
+            print(result['message'])
+            
+        else:
+            print(f"Fehler: {result['message']}")
+            
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP-Fehler: {http_err}")
+        
+    except requests.exceptions.RequestException as req_err:
+        print(f"Anfrage-Fehler: {req_err}")
+        
+    except ValueError:
+        print(f"Ungültige JSON-Antwort: {response.text}")
+        
+    finally:
+        archive_file['attachment'].close()
+
+
+
+def process_entries(import_data, uncommon_chars, author, password_piece_length, password_pieces_amount):
+    
+    export_data = []
+    
+    for entry in import_data:
+        
+        first_name = entry['first_name']
+        last_name = entry['last_name']
+        gender = entry['gender']
+        street = entry['street']
+        street_number = entry['street_number']
+        zip_code = entry['zip_code']
+        city = entry['city']
+        email = entry['email'] = create_email(first_name, last_name, uncommon_chars)
+        password = entry['password'] = create_password(password_piece_length, password_pieces_amount)
+        
+        create_letter(get_time('%d-%m-%Y'), first_name, last_name, gender, street, street_number, zip_code, city, email, password, author)
+        append_data_for_export(export_data, email, password)
+
+    return export_data
 
 
 
@@ -243,6 +256,12 @@ def main():
     author = {
         'first_name': 'Lorenzo',
         'last_name': 'Hug',
+        'mails': {
+                'outlook': 'sibby.hug@outlook.com',
+                'icloud': 'lorenzo.hug@icloud.com',
+                'school': 'lorenzo.hug@bsfh-lernende.ch',
+                'work': 'lorenzo.hug@espas.ch'
+        }
     }
     
     uncommon_chars = {
@@ -331,40 +350,24 @@ def main():
         ' ': ''
     }
     
-    import_location = 'import/MOCK_DATA.CSV'
-    export_location = f'export/{get_time('%Y-%m-%d_%H-%M')}.csv'
-    
-    import_data = get_data(import_location)
-    export_data = []
-    
-    password = []
     password_piece_length = 6
     password_pieces_amount = 3
     
+    server_url = 'https://mailgenerator.bm-it.ch/mail.php'
     archive_file_name = f'{get_time('%Y-%m-%d')}_newMailadr_{author['last_name'].lower()}.zip'
     
-    for entry in import_data:
-        
-        first_name = entry['first_name']
-        last_name = entry['last_name']
-        gender = entry['gender']
-        street = entry['street']
-        street_number = entry['street_number']
-        zip_code = entry['zip_code']
-        city = entry['city']
-        email = entry['email'] = create_email(first_name, last_name, uncommon_chars)
-        password = entry['password'] = create_password(password_piece_length, password_pieces_amount, password)
-        
-        create_letter(get_time('%d-%m-%Y'), first_name, last_name, gender, street, street_number, zip_code, city, email, password, author)
-        append_data_for_export(export_data, email, password)
+    import_location = 'import/MOCK_DATA.CSV'
+    export_location = f'export/{get_time('%Y-%m-%d_%H-%M')}.csv'
+
+    import_data = get_data(import_location)
+    export_data = process_entries(import_data, uncommon_chars, author, password_piece_length, password_pieces_amount)
     
     set_data(export_location, export_data, ['email', 'password'])
     create_zip_file(archive_file_name, ['export', 'letters'])
     
-    #send_mail(archive_file_name, len(import_data), author)
-    
-    get_info(import_data)
-    
+    send_mail(archive_file_name, len(import_data), author, server_url)
+    #get_info(import_data)
+
 
 
 main()
