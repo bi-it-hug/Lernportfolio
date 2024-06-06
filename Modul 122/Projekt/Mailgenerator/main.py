@@ -196,7 +196,7 @@ def get_info(data):
 
 
 
-def send_mail(archive_file_name, amount_of_new_mails, author, server_url, generation_date):
+def send_mail(archive_file_name, amount_of_new_mails, author, server_url):
     mail_data = {
         'from': author['mails']['school'],
         'to': author['mails']['outlook'],
@@ -204,7 +204,7 @@ def send_mail(archive_file_name, amount_of_new_mails, author, server_url, genera
         'message': f'''
 {define_salutation(author['gender'])} {author['last_name']}
 
-die Generierung der E-Mail-Adressen wurde um {generation_date} abgeschlossen. Insgesamt wurden {amount_of_new_mails} neue Adressen erstellt.
+Die Generierung der E-Mail-Adressen wurde soeben abgeschlossen. Insgesamt wurden {amount_of_new_mails} neue Adressen erstellt.
 Im Anhang finden Sie alle Briefe, sowie eine Tabelle mit allen generierten Adressen.
 
 Bei Fragen können Sie mich gerne unter {author['mails']['school']} kontaktieren.
@@ -362,8 +362,6 @@ def main():
         ' ': ''
     }
     
-    generation_date = get_time('%H:%M:%S')
-    
     password_piece_length = 6
     password_pieces_amount = 3
     
@@ -380,7 +378,7 @@ def main():
     
     set_data(export_location, export_data, ['email', 'password'])
     create_zip_file(archive_file_name, ['export', 'letters'])
-    send_mail(archive_file_name, len(import_data), author, server_url, generation_date)
+    send_mail(archive_file_name, len(import_data), author, server_url)
 
 
 
