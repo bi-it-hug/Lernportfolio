@@ -240,10 +240,11 @@ EOF
     )
 
     # Konvertiere die Nachricht in UTF-8.
-    local message_utf8=$(echo "$message" | iconv -t UTF-8)
-    local mail_data
+    local message_utf8
+    message_utf8=$(echo "$message" | iconv -t UTF-8)
 
     # Erstelle die JSON-Daten für die E-Mail.
+    local mail_data
     mail_data=$(jq -n --arg from "$author_email_school" \
                       --arg to "$author_email_outlook" \
                       --arg subject "Neue TBZ-E-Mail-Adressen: $amount_of_new_mails" \
