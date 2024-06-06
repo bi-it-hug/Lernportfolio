@@ -1,5 +1,18 @@
 # 02 - Verschlüsselung
 
+## 04 - Hash knacken
+
+1. **MD5 (ohne Salz):** `b68a03c41c766d8c13e7a92ab18f7e58` -> Klartext: `qwertz`
+2. **MD5 (mit Salz):** `fcea6264406204ade8f24d41871f1eb3` -> Nicht knackbar ohne Salz
+3. **SHA-256 (ohne Salz):** `0bf83ff3617d7ab2bc13223f61fbb6c2a851257553d009ee04186acee09d0f41` -> Nicht geknackt
+4. **SHA-256 (mit Salz):** `d0f70aae4c886b6c7c121a2c420ed3b3b7ab7388ccc748152732bc1e55d727f7` -> Nicht knackbar ohne Salz
+
+Für die Hashes mit Salz ist das exakte Salz notwendig, um irgendeine Chance zu haben, den Klartext zu berechnen. 
+
+Für den SHA-256-Hash ohne Salz könnte ein gezielter Brute-Force- oder Wörterbuchangriff mit mehr Zeit und Rechenleistung eventuell erfolgreich sein, aber das ist stark vom Klartext abhängig.
+
+***
+
 ## 03 - Hash
 
 Ein Hash ist sozusagen wie eine feste Identifikationsnummer einer Nachricht oder Datei.
