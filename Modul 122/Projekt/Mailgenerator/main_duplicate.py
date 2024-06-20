@@ -411,7 +411,7 @@ def main():
     
     set_data(export_location, export_data, ['email', 'password'])
     create_zip_file(archive_file_name, ['export', 'letters'])
-    #send_mail(archive_file_name, len(import_data), author, server_url)
+    send_mail(archive_file_name, len(import_data), author, server_url)
 
 
 
