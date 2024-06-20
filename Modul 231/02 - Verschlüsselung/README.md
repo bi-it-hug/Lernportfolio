@@ -1,9 +1,5 @@
 # 02 - Verschlüsselung
 
-## 05 - Cryptomator
-
-
-
 ## 04 - Hash knacken
 
 1. **MD5 (ohne Salz):** `b68a03c41c766d8c13e7a92ab18f7e58` -> Klartext: `qwertz`
