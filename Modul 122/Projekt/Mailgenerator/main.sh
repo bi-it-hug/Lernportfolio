@@ -38,7 +38,7 @@ declare -A UNCOMMON_CHARS=(
 
 # Funktion zum Herunterladen der CSV-Datei.
 get_csv() {
-    local file_path="$IMPORT_DIR/mock_data.csv"
+    local file_path="$IMPORT_DIR/MOCK_DATA.csv"
 
     # Erstelle das Import-Verzeichnis, falls es nicht existiert.
     mkdir -p "$IMPORT_DIR"
