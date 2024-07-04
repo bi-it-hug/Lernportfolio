@@ -1,9 +1,3 @@
-# 2024-04-11 | Prüfungsübungen
-
-## Übunge 1
-
-
-
 # 2024-04-04 | Prüfungsübungen
 
 ## Übung 1
