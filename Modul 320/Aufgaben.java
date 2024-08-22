@@ -46,9 +46,9 @@ public class Aufgaben {
     }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        aufgabe_1();
-        aufgabe_2(input);
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+            aufgabe_1();
+            aufgabe_2(input);
+        }
     }
 }
