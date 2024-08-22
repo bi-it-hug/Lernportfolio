@@ -1,0 +1,12 @@
+Aufgabe:
+
+a) Schreiben Sie einen Algorithmus der ein Dreieck auf dem Bildschirm zeichnet.
+
+    x
+   xxx
+  xxxxx
+ xxxxxxx
+
+
+b) Erweitern Sie das Programm, damit die Höhe abgefragt und das Dreieck entsprechend angezeigt werden kann.
+

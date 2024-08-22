@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "QS";
+    src: url(Quicksand.ttf);
+}
+
+:root {
+    --borad: 0.4rem;
+    --bg-25: rgb(25, 25, 25);
+    --bg-30: rgb(30, 30, 30);
+    --bg-35: rgb(35, 35, 35);
+    --bg-40: rgb(40, 40, 40);
+}
+
+* {
+    margin: 0;
+    font-family: "QS";
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    font-size: 16px !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-25);
+}
+
+.menu-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    border-radius: var(--borad);
+    transition: background-color 100ms ease-out;
+}
+
+.menu-wrapper:hover {
+    background-color: var(--bg-40);
+}
+
+.menu {
+    font-size: 2rem;
+    color: white;
+}
