@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cluedo</title>
+    <link rel="stylesheet" href="mvp.css">
+    <script src="variables.js" defer></script>
+    <script src="functions.js" defer></script>
+    <script src="eventListeners.js" defer></script>
+</head>
+<body>
+
+    <div id="parallax"></div>
+    <div id="overlay"></div>
+
+    <main>
+        <h1>Star Wars<br>Cluedo</h1>
+        <section>
+            <h2>Characters</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Special Ability</th>
+                    <th>Personality</th>
+                    <th>Weapon</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="character : ${characters}">
+                    <td th:text="${character.name}"></td>
+                    <td th:text="${character.role}"></td>
+                    <td th:text="${character.specialAbility}"></td>
+                    <td th:text="${character.personality}"></td>
+                    <td th:text="${character.weaponName}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Weapons</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Material</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="weapon : ${weapons}">
+                    <td th:text="${weapon.name}"></td>
+                    <td th:text="${weapon.type}"></td>
+                    <td th:text="${weapon.material}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>The rooms</h2>
+        </section>
+    </main>
+</body>
+</html>

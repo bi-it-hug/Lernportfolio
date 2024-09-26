@@ -1,0 +1,236 @@
+@font-face {
+    font-family: StarJedi;
+    src: url(../fonts/Starjedi.ttf);
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url(../fonts/OpenSans.ttf);
+}
+
+:root {
+    --bg-15: rgb(15, 15, 15);
+    --bg-20: rgb(20, 20, 20);
+    --bg-25: rgb(25, 25, 25);
+    --bg-30: rgb(30, 30, 30);
+    --bg-35: rgb(35, 35, 35);
+    --bg-40: rgb(40, 40, 40);
+    --bg-45: rgb(45, 45, 45);
+    --bg-50: rgb(50, 50, 50);
+    --bg-55: rgb(55, 55, 55);
+    --bg-60: rgb(60, 60, 60);
+    --bg-65: rgb(65, 65, 65);
+    --bg-70: rgb(70, 70, 70);
+    --bg-75: rgb(75, 75, 75);
+    --bg-80: rgb(80, 80, 80);
+    --bg-85: rgb(85, 85, 85);
+    --bg-90: rgb(90, 90, 90);
+    --bg-95: rgb(95, 95, 95);
+    --bg-100: rgb(100, 100, 100);
+    --test-color: rgb(255, 0, 255);
+    --text: rgb(222, 222, 222);
+    --shadow-value: 10rem;
+    --shadow-color: black;
+}
+
+* {
+    font-family: OpenSans;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.2;
+}
+
+*:not(body) {
+    font-size: 1rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    background: black;
+    font-size: 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0 8rem 8rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    z-index: 2;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    z-index: 2;
+    gap: .25rem;
+    margin: 14vh 10vh 10vh;
+}
+
+.logo {
+    width: 42vw;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 4vw;
+    text-transform: uppercase;
+}
+ 
+table {
+    background: var(--bg-40);
+    width: 100%;
+}
+
+table * {
+    text-align: left;
+    white-space: nowrap;
+}
+
+table *,
+form,
+select,
+button,
+a {
+    outline: 2px solid var(--bg-55);
+}
+
+thead,
+thead tr {
+    background: var(--bg-55);
+}
+
+th,
+td {
+    padding: .5rem .8rem;
+}
+
+th {
+    font-size: 1.2rem;
+    font-weight: 800;
+    background-color: var(--bg-50);
+}
+
+#parallax {
+    will-change: top;
+    background: url(../images/deathStar.jpg) center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 100vh;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset 0 0 11vw 6vw var(--shadow-color);
+    border-radius: 0%;
+    outline: 0rem solid var(--shadow-color);
+    z-index: 10;
+    pointer-events: none;
+}
+
+section,
+.game {
+    gap: .75rem;
+}
+
+.section-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+}
+
+.game h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+table,
+form {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .75);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--bg-40);
+    padding: 1.2rem 1.6rem;
+    gap: 1rem;
+}
+
+form label {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+select {
+    padding: .4rem .6rem;
+}
+
+select,
+button,
+a {
+    transition: filter .15s ease-out;
+    background-color: var(--bg-35);
+    border: 0;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+button,
+a {
+    padding: .6rem 1rem;
+    font-weight: 800;
+}
+
+select:hover,
+button:hover,
+a:hover {
+    filter: brightness(1.25);
+    cursor: pointer;
+}
