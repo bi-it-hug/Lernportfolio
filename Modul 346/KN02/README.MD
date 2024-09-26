@@ -4,7 +4,7 @@
 
 ### 4.1 - EC2
 
-**HTML-Seite inkl. URL**
+**HTML-Seite inkl. URL**<br>
 ![](screenshots/Screenshot%202024-09-05%20153533.png)
 
 ***
