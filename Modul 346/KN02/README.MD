@@ -54,5 +54,4 @@
 <br><img src="screenshots/php.png" width="500px" height="auto">
 
 **DB Info**<br>
-<br>![](screenshots/db.png)
 <br><img src="screenshots/db.png" width="500px" height="auto">
