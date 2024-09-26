@@ -51,7 +51,6 @@
 <br><img src="screenshots/apache.png" width="500px" height="auto">
 
 **PHP Info**<br>
-<br>![](screenshots/php.png)
 <br><img src="screenshots/php.png" width="500px" height="auto">
 
 **DB Info**<br>
