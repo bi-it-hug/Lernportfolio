@@ -1,0 +1,16 @@
+# **User Journey: Europa-Park App**
+
+| **Phase**               | **Touchpoints**                                        | **Emotionen**              | **Aktionen**                                       | **Notizen**                                                  |
+|-------------------------|-------------------------------------------------------|----------------------------|---------------------------------------------------|---------------------------------------------------------------|
+| **Recherche**            | Soziale Medien, Freunde, Online-Rezensionen           | Neugier, Interesse          | App herunterladen                                  | Nutzer informiert sich über die App und sieht Bewertungen an.  |
+| **Onboarding**           | App                                                   | Spannung, erste Neugier     | Erklärung der Hauptfunktionen, Konto erstellen     | Nutzer lernt die Hauptfunktionen der App kennen.               |
+| **Profil einrichten**    | App                                                   | Leichte Überforderung       | Präferenzen und Interessen angeben                 | Nutzer überlegt, welche Infos er angeben muss.                 |
+| **Ticketkauf**           | App                                                   | Freude, Vorfreude           | Datum/Uhrzeit wählen, Tickets kaufen               | Nutzer möchte effizient Tickets buchen.                        |
+| **Hotelbuchung (optional)** | App                                                | Komfort, Bequemlichkeit     | Hotel auswählen und buchen                         | Nutzer bucht eine Übernachtung für den Aufenthalt.             |
+| **Parkbesuch planen**    | App                                                   | Aufregung, Vorfreude        | Interaktive Karte nutzen, Attraktionen planen      | Nutzer plant den Tag mit der interaktiven Karte.               |
+| **Restaurantreservierung (optional)** | App                                      | Bequemlichkeit              | Tisch für Mittag/Abendessen reservieren            | Nutzer reserviert einen Tisch, um Wartezeiten zu vermeiden.    |
+| **Parkbesuch**           | App                                                   | Freude, Entdeckungslust     | Interaktion mit Karte, Infos zu Attraktionen       | Nutzer navigiert durch den Park, erhält Live-Infos zu Wartezeiten. |
+| **Souvenirshop (optional)** | App                                                | Interesse, Neugier          | Empfehlungen für Souvenirs, Angebote durchstöbern  | Nutzer möchte sich Souvenirs anschauen.                        |
+| **Feedback und Bewertung**| App                                                  | Zufriedenheit, Reflexion    | Feedback geben, Bewertung hinterlassen             | Nutzer bewertet die App nach dem Besuch.                       |
+| **Nach dem Besuch**      | App                                                   | Dankbarkeit, zukünftiges Interesse | Dankesnachricht, personalisierte Empfehlungen     | Nutzer erhält Rabatte und Empfehlungen für zukünftige Besuche. |
+| **Langfristige Bindung** | App                                                   | Interesse aufrechterhalten  | Regelmäßige Updates, Angebote                     | Nutzer erhält regelmäßig Updates zu neuen Attraktionen und Events.|
