@@ -29,7 +29,7 @@ public void Start() {
 
 ### Constructor
 Der **Konstruktor** ist eine spezielle Methode, die beim Erstellen eines Objekts aufgerufen wird, um dessen initialen Zustand zu setzen.  
-**Beispiel (C#):**
+**Beispiel:**
 ```java
 public Auto(String marke, int baujahr) {
     this.marke = marke;
