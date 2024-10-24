@@ -4,17 +4,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/mvp.css"/>
-    <link rel="icon" href="images/favicon.png" type="image/png"/>
+    <link rel="icon" href="images/favicon.png"/>
     <title>Star Wars Cluedo</title>
-    <script src="../js/static.js" defer></script>
-    <script src="../js/variables.js" defer></script>
-    <script src="../js/functions.js" defer></script>
-    <script src="../js/eventListeners.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
 
     <div id="parallax"></div>
-    <div id="overlay"></div>
 
     <main>
 
@@ -23,9 +19,9 @@
             <h3>Cluedo</h3>
         </div>
         
-        <div class="section-wrapper">
+        <section>
             <!-- Characters -->
-            <section>
+            <div class="table-wrapper">
                 <h2>Characters</h2>
                 <table>
                     <thead>
@@ -45,10 +41,10 @@
                     </tr>
                     </tbody>
                 </table>
-            </section>
+            </div>
 
             <!-- Weapons -->
-            <section>
+            <div class="table-wrapper">
                 <h2>Weapons</h2>
                 <table>
                     <thead>
@@ -66,10 +62,10 @@
                     </tr>
                     </tbody>
                 </table>
-            </section>
+            </div>
 
             <!-- Rooms -->
-            <section>
+            <div class="table-wrapper">
                 <h2>Cantina Rooms</h2>
                 <table>
                     <thead>
@@ -85,41 +81,9 @@
                     </tr>
                     </tbody>
                 </table>
-            </section>
-        </div>
-
-        <div class="game" id="checkGuess">
-            <h1>Take a guess!</h1>
-
-            <form action="#" th:action="@{/checkGuess}" method="post">
-                <span>
-                    <label for="character">Who is the murderer?</label>
-                    <select id="character" name="character">
-                        <option th:each="character : ${characters}" th:text="${character.name}" th:value="${character.name}"></option>
-                    </select>
-                </span>
-
-                <span>
-                    <label for="weapon">What weapon did they use?</label>
-                    <select id="weapon" name="weapon">
-                        <option th:each="weapon : ${weapons}" th:text="${weapon.name}" th:value="${weapon.name}"></option>
-                    </select>
-                </span>
-
-                <span>
-                    <label for="room">Where did the murder take place?</label>
-                    <select id="room" name="room">
-                        <option th:each="room : ${rooms}" th:text="${room.name}" th:value="${room.name}"></option>
-                    </select>
-                </span>
-        
-                <button type="submit">Check</button>
-            </form>
-        
-            <div th:if="${message}">
-                <h2 th:text="${message}"></h2>
             </div>
-        </div>
+
+        </section>
 
     </main>
     

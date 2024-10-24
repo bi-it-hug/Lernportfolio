@@ -1,15 +1,15 @@
 #cloud-config
 users:
-  - name: ubuntu # Benutzername
-    sudo: ALL=(ALL) NOPASSWD:ALL # Sudo-Regeln - Benutzer darf ohne Passwort als Root ausführen
-    groups: users, admin # Zugewiesene Benutzergruppen
-    home: /home/ubuntu # Home-Verzeichnis des Benutzers
-    shell: /bin/bash # Standard-Shell des Benutzers
-    ssh_authorized_keys: # Liste von SSH-Schlüsseln, die für die Authentifizierung verwendet werden dürfen
-      - ssh-rsa MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhMdKgNP4soXfnIacc3XFm5SNaAHFLzWY4aHXm6x9Y4RoiXtmzFB/Z+G/Luya/xgtlYZCD0UpM71zXcTSwQBxO3P6a4QQuh3NPu2SyqHm6SKdkFj/w5mXgEkBBYN9L+yvnqzpeqj21U1MzHVny6iiqpiHOr/eUSHPedE/XR2MVEWAy92fvmhlxmLVmn+GAQyr/3vx+W3kJI5ul62BtgsKRQfs2mIwePP4eKnvbqQJA76RyEglqd3sehhaaJyMvRAAXRz2vWNQPkAfoc+/MXzjBDiuatdZ05XAJ81Y7jpOabvR//hM4yrlIj0UUfW5vCwGOVhz6YvwjGW0EN0LfY05wQIDAQAB aws-key # SSH-Schlüssel für die Authentifizierung
-ssh_pwauth: false # Deaktiviert die Passwort-Authentifizierung für SSH
-disable_root: false # Root-Zugang nicht deaktiviert
-package_update: true # Updates der Pakete beim Start des Systems
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCHo5L+08dJl+39hNNbo7/td6DCjhXE/nt56ElA0jtis1jFVlS+XBqEBHM/sq03Ihf/0NqszSPU3ONF+74YeZXLUFmSsZZfwa7t1Gg9CMTo15Y+XFovV3BibAf1jnZD4wO4ROtWLha8rOWU3SNws8L6gI6mc5UcsSDpS9eY+lStLyDY5dGhbtizj4+seVG67W/LqO2uOs9SwEV2hvi+7VhbMELS+8Tu5TnlWlSfVvUXuRQ5UWXMxK2hqfB1gqICy4Y+b8IN8WMVsBRhpWcr35uXHkgDZ+Hc35BMqOfNwsaFRg0Wj26TIllAwDZ/Dcsaki+4xJDZMhpq+ElD6Y4LEzR/ aws-key
+ssh_pwauth: false
+disable_root: false 
+package_update: true
 packages:
-  - curl # Installiert curl für den Transfer von Daten
-  - wget # Installiert wget zum Herunterladen von Dateien
+  - curl 
+  - wget 

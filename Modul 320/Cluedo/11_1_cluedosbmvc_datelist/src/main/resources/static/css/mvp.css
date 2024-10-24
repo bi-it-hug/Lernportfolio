@@ -1,11 +1,55 @@
 @font-face {
-    font-family: StarJedi;
-    src: url(../fonts/Starjedi.ttf);
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Heavy.ttf);
+    font-weight: 900;
 }
 
 @font-face {
-    font-family: OpenSans;
-    src: url(../fonts/OpenSans.ttf);
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-ExtraBold.ttf);
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-SemiBold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-UltraLight.ttf);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Thin.ttf);
+    font-weight: 100;
 }
 
 :root {
@@ -31,10 +75,12 @@
     --text: rgb(222, 222, 222);
     --shadow-value: 10rem;
     --shadow-color: black;
+    --expo: cubic-bezier(.19,1,.22,1);
 }
 
-* {
-    font-family: OpenSans;
+*:not(head, script, table, table *) {
+    display: flex;
+    font-family: "Gilroy";
     box-sizing: border-box;
     scroll-behavior: smooth;
     color: var(--text);
@@ -42,8 +88,9 @@
     line-height: 1.2;
 }
 
-*:not(body) {
-    font-size: 1rem;
+html {
+    flex-direction: column;
+    font-size: 16px;
 }
 
 body {
@@ -54,7 +101,6 @@ body {
     height: 100%;
     position: relative;
     background: black;
-    font-size: 16px;
 }
 
 main {
@@ -67,10 +113,11 @@ main {
     padding: 0 8rem 8rem;
 }
 
-section {
+.table-wrapper {
     display: flex;
     flex-direction: column;
     align-self: flex-start;
+    gap: 0.4rem;
     z-index: 2;
 }
 
@@ -80,10 +127,12 @@ section {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80vh;
     z-index: 2;
-    gap: .25rem;
-    margin: 14vh 10vh 10vh;
+    gap: 0.25rem;
+    padding: 36vh 0;
+    animation: titleFadeIn 2s var(--expo);
+    pointer-events: none;
+    user-select: none;
 }
 
 .logo {
@@ -99,8 +148,9 @@ h3 {
     font-weight: 800;
     font-size: 4vw;
     text-transform: uppercase;
+    line-height: 0.86;
 }
- 
+
 table {
     background: var(--bg-40);
     width: 100%;
@@ -126,7 +176,7 @@ thead tr {
 
 th,
 td {
-    padding: .5rem .8rem;
+    padding: 0.5rem 0.8rem;
 }
 
 th {
@@ -147,90 +197,30 @@ th {
     height: 100vh;
 }
 
-#overlay {
+body::after {
+    content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     width: 100vw;
     height: 100vh;
     box-shadow: inset 0 0 11vw 6vw var(--shadow-color);
-    border-radius: 0%;
     outline: 0rem solid var(--shadow-color);
-    z-index: 10;
     pointer-events: none;
+    z-index: 10;
 }
 
-section,
-.game {
-    gap: .75rem;
-}
-
-.section-wrapper {
-    display: flex;
+section {
     justify-content: space-between;
-    gap: 4rem;
+    flex-wrap: wrap;
+    gap: 3rem;
 }
 
-.game {
-    display: flex;
-    flex-direction: column;
+table {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.75);
 }
 
-.game h1 {
-    font-size: 2rem;
-    font-weight: 800;
-}
-
-table,
-form {
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .75);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: var(--bg-40);
-    padding: 1.2rem 1.6rem;
-    gap: 1rem;
-}
-
-form label {
-    font-size: 1.4rem;
-    font-weight: 800;
-}
-
-select {
-    padding: .4rem .6rem;
-}
-
-select,
-button,
-a {
-    transition: filter .15s ease-out;
-    background-color: var(--bg-35);
-    border: 0;
-}
-
-span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-button,
-a {
-    padding: .6rem 1rem;
-    font-weight: 800;
-}
-
-select:hover,
-button:hover,
-a:hover {
-    filter: brightness(1.25);
-    cursor: pointer;
+/* Keyframes */
+@keyframes titleFadeIn {
+    from {opacity: 0; transform: translateY(100px);}
+    to {opacity: 1; transform: translateY(0px);}
 }
