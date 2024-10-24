@@ -1,4 +1,3 @@
-package Aufgaben;
 import java.util.Scanner;
 
 public class Aufgaben {
