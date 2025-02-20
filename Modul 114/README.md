@@ -33,15 +33,3 @@
 
 5. **Addition in einer ALU mit binären Eingaben A: 11011001 und B: 00110101:**
     - Binäre Addition ergibt `100001100` ohne Übertrag oder `00001100`, wenn nur 8 Bits berücksichtigt werden.
-
-Ö = Ölabdichtung
-R = Reifenglätte
-P = Papagei
-Ä = Äpfel
-R = Rochenfleisch
-C = Calvin
-O = Obolus
-C = Chernobyl
-K = Kopernikus
-
-SIC = Shitting Inside Calvin
