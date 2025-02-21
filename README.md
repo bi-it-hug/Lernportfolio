@@ -1,25 +1,21 @@
 # Lernportfolio
 
-Welcome to my Lernportfolio repository! This repository contains all the work I have completed throughout my school journey. It includes various projects, assignments, and other educational materials that showcase my learning progress and achievements.
+Willkommen in meinem Lernportfolio-Repository! Dieses Repository enthält alle Arbeiten, die ich während meiner Schulzeit abgeschlossen habe. Es umfasst verschiedene Projekte, Aufgaben und andere Bildungsunterlagen, die meinen Lernfortschritt und meine Leistungen zeigen.
 
-## Contents
+## Inhalt
 
--   **[Modul 122](./Modul%20122/)**: Automate processes with a scripting language
--   **[Modul 231](./Modul%20231/)**: Apply data protection and data security
--   **[Modul 320](./Modul%20320/)**: Object-oriented programming
--   **[Modul 322](./Modul%20322/)**: Design and implement user interfaces
--   **[Modul 346](./Modul%20346/)**: Design and implement cloud solutions
--   **[Modul 426](./Modul%20426/)**: Develop software using agile methods
--   **[Modul 431](./Modul%20431/)**: Carry out assignments independently in your own professional environment
+-   **[Modul 114](./Module/Modul%20114/)**: Codierungs-, Kompressions- und Verschlüsselungsverfahren einsetzen
+-   **[Modul 122](./Module/Modul%20122/)**: Abläufe mit einer Scriptsprache automatisieren
+-   **[Modul 165](./Module/Modul%20165/)**: NoSQL-Datenbanken einsetzen
+-   **[Modul 231](./Module/Modul%20231/)**: Datenschutz und Datensicherheit anwenden
+-   **[Modul 254](./Module/Modul%20254/)**: Geschäftsprozesse im eigenen Berufsumfeld beschreiben
+-   **[Modul 320](./Module/Modul%20320/)**: Objektorientiert Programmieren
+-   **[Modul 322](./Module/Modul%20322/)**: Benutzerschnittstellen entwerfen und implementieren
+-   **[Modul 346](./Module/Modul%20346/)**: Cloud Lösungen konzipieren und realisieren
+-   **[Modul 347](./Module/Modul%20347/)**: Dienst mit Container anwenden
+-   **[Modul 426](./Module/Modul%20426/)**: Software mit agilen Methoden entwickeln
+-   **[Modul 431](./Module/Modul%20431/)**: Aufträge im eigenen Berufsumfeld selbstständig durchführen
 
-## Purpose
+## Zweck
 
-The primary goal of this repository is to document my educational journey and keep track of the work I've completed. It serves as a portfolio for my school achievements and is a place for me to reflect on my progress.
-
-## Getting Started
-
-If you wish to explore or use any of the materials in this repository, simply clone it to your local machine with the following command:
-
-```bash
-git clone https://github.com/bi-it-hug/Lernportfolio.git
-```
+Das Hauptziel dieses Repositories ist es, meine Bildungsreise zu dokumentieren und die abgeschlossenen Arbeiten nachzuverfolgen. Es dient als Portfolio für meine schulischen Leistungen und ist ein Ort, an dem ich über meinen Fortschritt reflektieren kann.
