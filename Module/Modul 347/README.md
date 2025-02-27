@@ -1,5 +1,7 @@
 # Modul 347
 
+## Einleitung
+
 1. **Container-Virtualisierung (CV)** ist eine Form der Virtualisierung, bei der Anwendungen zusammen mit ihren Abhängigkeiten in einem Prozess-Isolationscontainer laufen. Diese Container teilen sich den gleichen Kernel des Host-Betriebssystems, sind aber voneinander isoliert, was eine effiziente Nutzung der Systemressourcen ermöglicht und die Konsistenz über Entwicklung, Test und Produktion hinweg sicherstellt.
 
 2. Ein **Betriebssystem**, das Container-Virtualisierung unterstützen soll, muss über Funktionen zur Prozess- und Ressourcenisolierung verfügen. Dazu gehört die Unterstützung von **Namespaces** zur Isolation von Prozessen, Netzwerken und Benutzern sowie **Control Groups (Cgroups)** zur Ressourcenkontrolle, wie CPU, Speicher und Netzwerkressourcen.
@@ -30,3 +32,65 @@
 | Nachteile                                                          | Geringere Isolation, abhängig vom Host-Betriebssystem                                          | Höherer Ressourcenverbrauch, langsamere Startzeiten, höhere Kosten                                   |
 | Wie wird das Betriebssystem des Hosts vor Veränderungen geschützt? | Isolation auf Betriebssystemebene schützt das Host-Betriebssystem                              | Hypervisor gewährleistet Trennung und schützt das Host-Betriebssystem                                |
 | Wann einsetzen                                                     | Schnelle Bereitstellung und Skalierbarkeit benötigt, Betriebssystem-Übereinstimmungen sekundär | Vollständige Isolation nötig, verschiedene Betriebssysteme, vollständige OS-Umgebung erforderlich    |
+
+## Docker Befehle
+
+```bash
+docker run #Erstellt und startet einen Container basierend auf einem Image.
+```
+
+```bash
+docker start #Startet einen gestoppten Container erneut.
+```
+
+```bash
+docker stop #Stoppt einen laufenden Container.
+```
+
+```bash
+docker rm #Entfernt einen gestoppten Container.
+```
+
+```bash
+docker ps #Zeigt eine Liste der laufenden Container an.
+```
+
+```bash
+docker images #Listet alle lokal gespeicherten Docker-Images auf.
+```
+
+```bash
+docker pull #Lädt ein Image aus einem Registry-Server herunter.
+```
+
+```bash
+docker push #Überträgt ein lokales Image in eine Registry.
+```
+
+```bash
+docker exec #Führt einen Befehl in einem laufenden Container aus.
+```
+
+```bash
+docker logs #Zeigt die Log-Ausgabe eines Containers an.
+```
+
+```bash
+docker build #Erstellt ein Docker-Image aus einem Dockerfile.
+```
+
+```bash
+docker compose up #Startet alle in einer Docker-Compose-Datei definierten Container.
+```
+
+```bash
+docker compose down #Stoppt und entfernt alle Container, Netzwerke und Volumes einer Compose-Umgebung.
+```
+
+```bash
+docker image rm #Löscht ein oder mehrere Images aus dem lokalen Speicher.
+```
+
+```bash
+docker kill #Beendet einen laufenden Container sofort.
+```
