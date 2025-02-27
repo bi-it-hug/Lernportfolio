@@ -1,7 +1,9 @@
+# Aufgabe
+
 1. **Binär-Dezimal-Hexadezimal-Tabelle:**
 
-    | BIN(MSB) | BIN | BIN | BIN(LSB) | DEC | HEX |
-    | -------- | --- | --- | -------- | --- | --- |
+    | BIN(MSB) | BIN | BIN | BIN(LSB) | DEC | HEX | s   |
+    | -------- | --- | --- | -------- | --- | --- | --- |
     | 0        | 0   | 0   | 0        | 0   | 0   |
     | 0        | 0   | 0   | 1        | 1   | 1   |
     | 0        | 0   | 1   | 0        | 2   | 2   |
