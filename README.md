@@ -5,10 +5,15 @@ Willkommen in meinem Lernportfolio-Repository! Dieses Repository enthält alle A
 ## Inhalt
 
 -   **[Modul 114](./Module/Modul%20114/)**: Codierungs-, Kompressions- und Verschlüsselungsverfahren einsetzen
+-   **[Modul 117](./Module/Modul%20117/)**: Informatik- und Netzinfrastruktur für ein kleines Unternehmen realisieren
 -   **[Modul 122](./Module/Modul%20122/)**: Abläufe mit einer Scriptsprache automatisieren
+-   **[Modul 162](./Module/Modul%20162/)**: Daten analysieren und modellieren
+-   **[Modul 164](./Module/Modul%20164/)**: Datenbanken erstellen und Daten einfügen
 -   **[Modul 165](./Module/Modul%20165/)**: NoSQL-Datenbanken einsetzen
 -   **[Modul 231](./Module/Modul%20231/)**: Datenschutz und Datensicherheit anwenden
+-   **[Modul 293](./Module/Modul%20293/)**: Webauftritt erstellen und veröffentlichen
 -   **[Modul 254](./Module/Modul%20254/)**: Geschäftsprozesse im eigenen Berufsumfeld beschreiben
+-   **[Modul 319](./Module/Modul%20319/)**: Applikationen entwerfen und implementieren
 -   **[Modul 320](./Module/Modul%20320/)**: Objektorientiert Programmieren
 -   **[Modul 322](./Module/Modul%20322/)**: Benutzerschnittstellen entwerfen und implementieren
 -   **[Modul 346](./Module/Modul%20346/)**: Cloud Lösungen konzipieren und realisieren
