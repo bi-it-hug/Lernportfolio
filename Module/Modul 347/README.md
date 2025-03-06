@@ -94,3 +94,27 @@ docker image rm #Löscht ein oder mehrere Images aus dem lokalen Speicher.
 ```bash
 docker kill #Beendet einen laufenden Container sofort.
 ```
+
+<br>
+
+```mermaid
+graph TD
+    A[docker build] -->|Erstellt ein Image| B[docker run]
+    B -->|Startet Container| C[docker ps]
+    C -->|Zeigt laufende Container| D[docker exec]
+    C --> E[docker logs]
+
+    B -->|Container gestoppt?| F[docker stop]
+    F -->|Gestoppter Container?| G[docker rm]
+
+    A -->|Image vorhanden?| H[docker images]
+    H -->|Image nicht vorhanden?| I[docker pull]
+    H -->|Image hochladen?| J[docker push]
+
+    G -->|Container entfernt| K[docker run]
+
+    L[docker compose up] -->|Startet mehrere Container| M[docker ps]
+    N[docker compose down] -->|Stoppt & entfernt Container| O[docker image rm]
+
+    P[docker kill] -->|Beendet Container sofort| G
+```
