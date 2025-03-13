@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+    mysql:
+        image: mysql:latest
+        container_name: mysql-db
+        command: mysqld
+        environment:
+            MYSQL_USER: user
+            MYSQL_PASSWORD: user
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: default_schema
+        volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/1.sql
+        ports:
+            - 3306:3306
+
+    mongodb:
+        image: mongo:latest
+        container_name: mongo-db
+        restart: always
+        ports:
+            - 27017:27017
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            #MONGO_INITDB_ROOT_PASSWORD: 1234
+            MONGO_INITDB_ROOT_PASSWORD: root
+        volumes:
+            - ./init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+    mongo-express:
+        image: mongo-express:latest
+        container_name: mongo-express
+        restart: always
+        ports:
+            - 8081:8081
+        environment:
+            # ME_CONFIG_MONGODB_ENABLE_ADMIN: "true" / "false"
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            #ME_CONFIG_MONGODB_ADMINPASSWORD: 1234
+            ME_CONFIG_MONGODB_ADMINPASSWORD: root
+            #ME_CONFIG_MONGODB_URL: mongodb://root:1234@mongodb:27017/
+            ME_CONFIG_MONGODB_URL: mongodb://root:root@mongodb:27017/
