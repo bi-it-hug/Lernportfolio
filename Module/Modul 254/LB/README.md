@@ -36,3 +36,5 @@ Der Prozess soll Mitarbeitern helfen, die Schritte des Einstellungsprozesses bes
 ## Diagramm
 
 Das BPMN-Diagramm für diesen Prozess kann in der Datei [`lb.bpmn`](./lb.bpmn) gefunden werden.
+
+![BPMN-Diagramm](./lb.png)
