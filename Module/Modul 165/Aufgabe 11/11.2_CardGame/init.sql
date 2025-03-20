@@ -10,10 +10,10 @@ create table car (
     prize double
 );
 
-insert into car (imageUrl, tradeName, model, prize) VALUES ('images/Auto.png', 'Audi', 'Flaschback 300', 50000.00);
-insert into car (imageUrl, tradeName, model, prize) VALUES ('images/Auto.png', 'Opel', 'Manta SE', 20000.00);
-insert into car (imageUrl, tradeName, model, prize) VALUES ('images/Auto.png', 'VW', 'Golf GL', 12000.00);
-insert into car (imageUrl, tradeName, model, prize) VALUES ('images/Auto.png', 'Fiat', '500', 15000.00);
+insert into car (imageUrl, tradeName, model, prize) VALUES ('images/Audi.svg', 'Audi', 'Flaschback 300', 50000.00);
+insert into car (imageUrl, tradeName, model, prize) VALUES ('images/Opel.svg', 'Opel', 'Manta SE', 20000.00);
+insert into car (imageUrl, tradeName, model, prize) VALUES ('images/VW.jpg', 'VW', 'Golf GL', 12000.00);
+insert into car (imageUrl, tradeName, model, prize) VALUES ('images/Fiat.svg', 'Fiat', '500', 15000.00);
 
 -- ignorieren Sie diese Zeile Für Aufgabe 1
 ALTER USER 'root'@'localhost' IDENTIFIED  WITH mysql_native_password BY 'root';
