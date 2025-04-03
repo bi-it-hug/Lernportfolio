@@ -1,0 +1,37 @@
+{
+    "StartLogEntry": {
+        "timestamp": "Date",
+        "initializeA": {
+            "assignedTo": {
+                "name": "String"
+            },
+            "contains": [
+                {
+                    "brand": "String",
+                    "model": "String",
+                    "prize": "double",
+                    "velocity": "int"
+                },
+                {
+                    "brand": "String",
+                    "model": "String",
+                    "prize": "double",
+                    "velocity": "int"
+                }
+            ]
+        },
+        "initializeB": {
+            "assignedTo": {
+                "name": "String"
+            },
+            "contains": [
+                {
+                    "brand": "String",
+                    "model": "String",
+                    "prize": "double",
+                    "velocity": "int"
+                }
+            ]
+        }
+    }
+}

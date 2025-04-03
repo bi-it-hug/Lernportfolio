@@ -1,0 +1,96 @@
+{
+    "entities": {
+        "SPIEL": {
+            "attributes": {
+                "SpielID": "int",
+                "Startzeit": "datetime"
+            }
+        },
+        "SEITE": {
+            "attributes": {
+                "SeiteID": "int",
+                "Name": "string"
+            }
+        },
+        "KARTE": {
+            "attributes": {
+                "KarteID": "int",
+                "Bezeichnung": "string"
+            }
+        },
+        "KARTENZUTEILUNG": {
+            "attributes": {
+                "ZuteilungsID": "int",
+                "Zeitstempel": "datetime"
+            }
+        },
+        "SIEG": {
+            "attributes": {
+                "SiegID": "int",
+                "Zeitstempel": "datetime"
+            }
+        },
+        "SEITENWECHSEL": {
+            "attributes": {
+                "WechselID": "int",
+                "Zeitstempel": "datetime"
+            }
+        }
+    },
+    "relationships": [
+        {
+            "from": "SPIEL",
+            "to": "KARTENZUTEILUNG",
+            "type": "one-to-many",
+            "label": "beinhaltet"
+        },
+        {
+            "from": "SPIEL",
+            "to": "SIEG",
+            "type": "one-to-many",
+            "label": "hat"
+        },
+        {
+            "from": "SPIEL",
+            "to": "SEITENWECHSEL",
+            "type": "one-to-many",
+            "label": "enthält"
+        },
+        {
+            "from": "KARTENZUTEILUNG",
+            "to": "SEITE",
+            "type": "many-to-one",
+            "label": "Seite"
+        },
+        {
+            "from": "KARTENZUTEILUNG",
+            "to": "KARTE",
+            "type": "many-to-one",
+            "label": "Karte"
+        },
+        {
+            "from": "SIEG",
+            "to": "SEITE",
+            "type": "many-to-one",
+            "label": "Siegerseite"
+        },
+        {
+            "from": "SEITENWECHSEL",
+            "to": "KARTE",
+            "type": "many-to-one",
+            "label": "betroffeneKarte"
+        },
+        {
+            "from": "SEITENWECHSEL",
+            "to": "SEITE",
+            "type": "many-to-one",
+            "label": "vonSeite"
+        },
+        {
+            "from": "SEITENWECHSEL",
+            "to": "SEITE",
+            "type": "many-to-one",
+            "label": "zuSeite"
+        }
+    ]
+}

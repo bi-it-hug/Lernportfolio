@@ -1,0 +1,14 @@
+{
+    "SwapLogEntry": {
+        "timestamp": "Date",
+        "player": {
+            "name": "String"
+        },
+        "card": {
+            "brand": "String",
+            "model": "String",
+            "prize": "double",
+            "velocity": "int"
+        }
+    }
+}
