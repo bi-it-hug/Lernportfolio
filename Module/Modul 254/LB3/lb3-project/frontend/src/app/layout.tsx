@@ -20,7 +20,7 @@ export default function RootLayout({
     return (
         <html lang="de">
             <body className={`${plusJakartaSans.className} antialiased w-screen h-screen flex`}>
-                <aside className="bg-[repeating-linear-gradient(45deg,_var(--border-color),_var(--border-color)_var(--border-width),_transparent_var(--border-width),_transparent_10px)] w-fit h-screen flex p-3 border-r-(length:--border-width) border-(--border-color)">
+                <aside className="w-fit h-screen flex p-3 border-r-(length:--border-width) border-(--border-color)">
                     <Navigation />
                 </aside>
                 {children}
@@ -28,3 +28,5 @@ export default function RootLayout({
         </html>
     );
 }
+
+// bg-[repeating-linear-gradient(45deg,_var(--border-color),_var(--border-color)_var(--border-width),_transparent_var(--border-width),_transparent_10px)]

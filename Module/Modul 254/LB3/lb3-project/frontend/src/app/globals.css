@@ -95,14 +95,4 @@
 }
 
 @layer utilities {
-    input[type="range"]::-moz-range-thumb {
-        @apply border-0 bg-neutral-50 hover:opacity-70 size-3 rounded-full;
-    }
-
-    .inset-0-unset-0-0 {
-        top: 0;
-        right: unset;
-        bottom: 0;
-        left: 0;
-    }
 }

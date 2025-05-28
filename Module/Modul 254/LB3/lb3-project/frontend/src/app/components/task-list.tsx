@@ -1,6 +1,6 @@
 "use client";
 
-import env from "@/app/env";
+import config from "@/app/config";
 import { IonIcon } from "./ion-icon";
 import { Task } from "../models/task";
 import { useState, useRef, useCallback, ReactNode } from "react";
@@ -19,7 +19,7 @@ export function TaskList({ data }: { data: Task[] }) {
 
     async function completeTask(task: Task) {
         try {
-            const response = await fetch(`${env.url}/${env.endpoint}/${task.id}`, {
+            const response = await fetch(`${config.url}/${config.endpoint}/${task.id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ ...task, completed: !task.completed }),
@@ -35,7 +35,7 @@ export function TaskList({ data }: { data: Task[] }) {
 
     async function deleteTask(task: Task) {
         try {
-            const response = await fetch(`${env.url}/${env.endpoint}/${task.id}`, {
+            const response = await fetch(`${config.url}/${config.endpoint}/${task.id}`, {
                 method: "DELETE",
             });
 
@@ -52,7 +52,7 @@ export function TaskList({ data }: { data: Task[] }) {
         if (!input?.value) return;
 
         try {
-            const response = await fetch(`${env.url}/${env.endpoint}/${task.id}`, {
+            const response = await fetch(`${config.url}/${config.endpoint}/${task.id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ ...task, name: input.value }),
@@ -130,7 +130,7 @@ export function TaskName({
     return (
         <div className="relative text-sm font-normal w-fit whitespace-nowrap">
             <p
-                className={`${task.completed ? "text-neutral-50/50 italic after:w-full after:opacity-100" : "text-neutral-50"} ${isEditing ? "opacity-0" : ""} after:absolute after:content-[] after:inset-0-unset-0-0 after:w-0 after:opacity-0 after:h-[1px] after:bg-neutral-50 after:m-auto`}
+                className={`${task.completed ? "text-neutral-50/50 italic after:w-full after:opacity-100" : "text-neutral-50"} ${isEditing ? "opacity-0" : ""} after:absolute after:content-[] after:inset-y-0 after:left-0 after:w-0 after:opacity-0 after:h-[1px] after:bg-neutral-50 after:m-auto`}
             >
                 {children}
             </p>
@@ -153,16 +153,16 @@ export function TaskActions({ children }: { children?: React.ReactNode }) {
 
 export function CompleteButton({ onComplete }: { onComplete: () => void }) {
     return (
-        <button onClick={onComplete} className="group/button hover:bg-green-400/10 hover:border-green-400/20 action-button">
-            <IonIcon Icon="CheckmarkDone" ClassName="text-neutral-50 group-hover/button:text-green-400" />
+        <button onClick={onComplete} className="group/button hover:bg-green-300/10 hover:border-green-300/20 action-button">
+            <IonIcon Icon="CheckmarkDone" ClassName="text-neutral-50 group-hover/button:text-green-300" />
         </button>
     );
 }
 
 export function EditButton({ onEdit }: { onEdit: () => void }) {
     return (
-        <button onClick={onEdit} className="group/button hover:bg-yellow-400/10 hover:border-yellow-400/20 action-button">
-            <IonIcon Icon="Create" ClassName="group-hover/button:stroke-yellow-400 group-hover/button:text-yellow-400" />
+        <button onClick={onEdit} className="group/button hover:bg-yellow-300/10 hover:border-yellow-300/20 action-button">
+            <IonIcon Icon="Create" ClassName="group-hover/button:stroke-yellow-300 group-hover/button:text-yellow-300" />
         </button>
     );
 }

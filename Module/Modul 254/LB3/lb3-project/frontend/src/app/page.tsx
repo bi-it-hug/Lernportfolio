@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
-import nextConfig from "../../next.config";
+import config from "@/app/config";
 
 export default function Index() {
-    redirect(nextConfig.rootPage);
+    redirect(config.rootPage);
 }
