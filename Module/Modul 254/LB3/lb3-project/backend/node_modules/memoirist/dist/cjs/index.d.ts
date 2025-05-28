@@ -1,0 +1,43 @@
+interface FindResult<T> {
+    store: T;
+    params: Record<string, any>;
+}
+interface ParamNode<T> {
+    name: string;
+    store: T | null;
+    inert: Node<T> | null;
+}
+interface Node<T> {
+    part: string;
+    store: T | null;
+    inert: Record<number, Node<T>> | null;
+    params: ParamNode<T> | null;
+    wildcardStore: T | null;
+}
+interface Config {
+    /**
+     * lazily create nodes
+     *
+     * @default undefined
+     * @since 0.3.0
+     */
+    lazy?: boolean;
+}
+declare class Memoirist<T> {
+    config: Config;
+    root: Record<string, Node<T>>;
+    history: [string, string, T][];
+    deferred: [string, string, T][];
+    constructor(config?: Config);
+    private static regex;
+    private lazyFind;
+    build(): void;
+    add(method: string, path: string, store: T, { ignoreError, ignoreHistory, lazy }?: {
+        ignoreError?: boolean;
+        ignoreHistory?: boolean;
+        lazy?: boolean;
+    }): FindResult<T>['store'];
+    find(method: string, url: string): FindResult<T> | null;
+}
+
+export { type Config, type FindResult, Memoirist, type Node, type ParamNode, Memoirist as default };

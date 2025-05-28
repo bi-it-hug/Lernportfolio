@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+    db:
+        image: mysql:8.0
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_NAME}
+            MYSQL_ROOT_HOST: "%"
+        command: --default-authentication-plugin=mysql_native_password
+        ports:
+            - "${DB_PORT}:3306"
+        volumes:
+            - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        environment:
+            DB_HOST: db
+            DB_USER: root
+            DB_PASSWORD: ${DB_PASSWORD}
+            DB_NAME: ${DB_NAME}
+            DB_PORT: ${DB_PORT}
+        ports:
+            - "3000:3000"
+        depends_on:
+            db:
+                condition: service_healthy
+
+volumes:
+    mysql_data:

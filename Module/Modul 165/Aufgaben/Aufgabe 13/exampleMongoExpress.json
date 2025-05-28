@@ -1,0 +1,28 @@
+{
+  "_id": ObjectId(),
+  "dates": {
+    "date": ISODate("2012-05-14T16:20:09.314Z"),
+    "new_date": ISODate(),
+    "alternative": new Date()
+  },
+  "photo": "data:image/jpeg;base64,/9j/4...",
+  "video": "data:video/webm;base64,GkXfo...",
+  "audio": "data:audio/ogg;base64,T2dnUw...",
+  "bool": true,
+  "string": "hello world!",
+  "list of numbers": [
+    123,
+    111e+87,
+    4.4,
+    -12345.765
+  ],
+  "reference": DBRef("collection",
+  "4fb1299686a989240b000001"),
+  "ts": Timestamp(ISODate(),
+  1),
+  "minkey": MinKey(),
+  "maxkey": MaxKey(),
+  "func": function() { alert('Hello World!')
+  },
+  "symbol": Symbol("test")
+}

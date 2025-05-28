@@ -1,0 +1,53 @@
+[
+    {
+        "_id": {
+            "$oid": "635e73bc1eb1f0a05ee30205"
+        },
+        "dates": {
+            "date": {
+                "$date": {
+                    "$numberLong": "1337012409314"
+                }
+            },
+            "new_date": {
+                "$date": {
+                    "$numberLong": "1667134396732"
+                }
+            },
+            "alternative": {
+                "$date": {
+                    "$numberLong": "1667134396733"
+                }
+            }
+        },
+        "photo": "data:image/jpeg;base64,/9j/4...",
+        "video": "data:video/webm;base64,GkXfo...",
+        "audio": "data:audio/ogg;base64,T2dnUw...",
+        "bool": true,
+        "string": "hello world!",
+        "list of numbers": [
+            123,
+            1.11e+89,
+            4.4,
+            -12345.765
+        ],
+        "reference": {
+            "$ref": "collection",
+            "$id": "4fb1299686a989240b000001"
+        },
+        "ts": {
+            "$timestamp": {
+                "t": 1,
+                "i": 687085885
+            }
+        },
+        "minkey": {
+            "$minKey": 1
+        },
+        "maxkey": {
+            "$maxKey": 1
+        },
+        "func": "function() { alert('Hello World!') }",
+        "symbol": "test"
+    }
+]

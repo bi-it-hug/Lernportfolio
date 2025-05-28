@@ -1,0 +1,33 @@
+{
+    "date": "2025-05-08T14:00:00Z",
+    "location": {
+        "city": "Bern",
+        "plz": 3000
+    },
+    "measurings": [
+        {
+            "kind": "temperature",
+            "value": 18.5
+        },
+        {
+            "kind": "humidity",
+            "value": 65.0
+        },
+        {
+            "kind": "wind",
+            "value": 11.2
+        },
+        {
+            "kind": "rain",
+            "value": 0.0
+        },
+        {
+            "kind": "sunrise",
+            "value": "05:58:00"
+        },
+        {
+            "kind": "sunset",
+            "value": "20:46:00"
+        }
+    ]
+}
