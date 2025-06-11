@@ -1,0 +1,19 @@
+{
+    "id": "63886918d6f3645aa340b433",
+    "firstName": "Alice",
+    "lastName": "Keller",
+    "city": {
+        "name": "Winterthur",
+        "plz": 8400
+    },
+    "articles": [
+        {
+            "type": "book",
+            "prize": 25.99
+        },
+        {
+            "type": "table",
+            "prize": 250.0
+        }
+    ]
+}

@@ -4,7 +4,6 @@ import config from "@/app/config";
 import { IonIcon } from "./ion-icon";
 import { Task } from "../models/task";
 import { useState, useRef, useCallback, ReactNode } from "react";
-import { CaretForward, CheckmarkDone, Create, CreateOutline, Trash, TrashOutline } from "react-ionicons";
 
 export function TaskList({ data }: { data: Task[] }) {
     const [tasks, setTasks] = useState(data);
@@ -131,7 +130,7 @@ export function TaskName({
     return (
         <div className="relative text-sm font-normal w-fit whitespace-nowrap">
             <p
-                className={`${task.completed ? "dark:text-neutral-50/50 italic after:w-full after:opacity-100" : "dark:text-neutral-50"} ${isEditing ? "opacity-0" : ""} after:absolute after:content-[] after:inset-y-0 after:left-0 after:w-0 after:opacity-0 after:h-[1px] after:bg-neutral-50 after:m-auto`}
+                className={`${task.completed ? "text-neutral-50/50 italic after:w-full after:opacity-100" : "text-neutral-50"} ${isEditing ? "opacity-0" : ""} after:absolute after:content-[] after:inset-y-0 after:left-0 after:w-0 after:opacity-0 after:h-[1px] after:bg-neutral-50 after:m-auto`}
             >
                 {children}
             </p>
@@ -140,7 +139,7 @@ export function TaskName({
                 type="text"
                 placeholder={children?.toString()}
                 defaultValue={children as string}
-                className={`absolute inset-0 px-1 w-fit dark:text-neutral-50 ${isEditing ? "" : "hidden"}`}
+                className={`absolute inset-0 px-1 w-fit ${isEditing ? "" : "hidden"}`}
                 onKeyDown={onKeyDown}
                 onBlur={onBlur}
             />
@@ -155,7 +154,7 @@ export function TaskActions({ children }: { children?: React.ReactNode }) {
 export function CompleteButton({ onComplete }: { onComplete: () => void }) {
     return (
         <button onClick={onComplete} className="group/button hover:bg-green-300/10 hover:border-green-300/20 action-button">
-            <CheckmarkDone cssClasses="dark:text-neutral-500 group-hover/button:text-green-300 size-(--icon-size)" />
+            <IonIcon Icon="CheckmarkDone" ClassName="text-neutral-50 group-hover/button:text-green-300 size-[0.9rem]" />
         </button>
     );
 }
@@ -163,7 +162,7 @@ export function CompleteButton({ onComplete }: { onComplete: () => void }) {
 export function EditButton({ onEdit }: { onEdit: () => void }) {
     return (
         <button onClick={onEdit} className="group/button hover:bg-yellow-300/10 hover:border-yellow-300/20 action-button">
-            <CreateOutline cssClasses="dark:text-neutral-500 dark:fill-neutral-500 group-hover/button:text-yellow-300 group-hover/button:fill-yellow-300 size-(--icon-size)" />
+            <IonIcon Icon="Create" ClassName="group-hover/button:stroke-yellow-300 group-hover/button:text-yellow-300 size-[0.9rem]" />
         </button>
     );
 }
@@ -171,11 +170,11 @@ export function EditButton({ onEdit }: { onEdit: () => void }) {
 export function DeleteButton({ onDelete }: { onDelete: () => void }) {
     return (
         <button onClick={onDelete} className="group/button hover:bg-red-400/10 hover:border-red-400/20 action-button">
-            <TrashOutline cssClasses="dark:text-neutral-500 group-hover/button:text-red-400 size-(--icon-size)" />
+            <IonIcon Icon="Trash" ClassName="group-hover/button:text-red-400 size-[0.9rem]" />
         </button>
     );
 }
 
 export function Bulletpoint({ task }: { task: Task }) {
-    return <CaretForward cssClasses={`size-3.5 ml-3  ${task.completed ? "dark:fill-neutral-50/50" : "dark:fill-neutral-50"}`} />;
+    return <IonIcon Icon="CaretForward" ClassName={`size-3.5 ml-3  ${task.completed ? "fill-neutral-50/50" : "fill-neutral-50"}`} />;
 }

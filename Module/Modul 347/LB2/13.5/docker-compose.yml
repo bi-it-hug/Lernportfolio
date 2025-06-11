@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+    app:
+        build: .
+        ports:
+            - "8080:8080"
+        environment:
+            REFCARD_THEME: light
+            REFCARD_RECAPTCHA_KEY_SITE: "dein-site-key"
+            REFCARD_RECAPTCHA_KEY_SECRET: "dein-secret"
+            REFCARD_DB_URL: jdbc:mysql://db:3306/messagedb?verifyServerCertificate=false&useSSL=false
+            REFCARD_DB_USER: root
+            REFCARD_DB_PASSWORD: rootpass
+        depends_on:
+            - db
+
+    db:
+        image: mysql:8
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpass
+            MYSQL_DATABASE: messagedb
+        ports:
+            - "3306:3306"
+        volumes:
+            - db-data:/var/lib/mysql
+
+volumes:
+    db-data:

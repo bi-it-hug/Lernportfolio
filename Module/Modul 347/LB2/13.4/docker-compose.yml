@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        depends_on:
+            - database
+        ports:
+            - "8090:80"
+        environment:
+            PMA_HOST: database
+        networks:
+            - db_network
+
+    database:
+        image: mariadb:10.9.5
+        volumes:
+            - ./db_data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: 123456
+        networks:
+            - db_network
+
+    web:
+        image: nginx
+        networks:
+            - my_network
+
+networks:
+    db_network:
+        driver: bridge
+    my_network:
+        driver: bridge

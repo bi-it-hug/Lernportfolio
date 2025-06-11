@@ -3,7 +3,7 @@
 import * as IonIcons from "react-ionicons";
 
 export function IonIcon({ Icon, ClassName }: { Icon: string; ClassName?: string }) {
-    const globalClasses = "size-(--icon-size)";
+    const globalClasses = "";
 
     switch (Icon) {
         case "CaretForward":
@@ -62,23 +62,5 @@ export function IonIcon({ Icon, ClassName }: { Icon: string; ClassName?: string 
 
         case "Mail":
             return <IonIcons.Mail className={`${globalClasses} ${ClassName}`} />;
-
-        case "Settings":
-            return <IonIcons.Settings className={`${globalClasses} ${ClassName}`} />;
-
-        case "Checkbox":
-            return <IonIcons.Checkbox className={`${globalClasses} ${ClassName}`} />;
-
-        case "Search":
-            return <IonIcons.Search className={`${globalClasses} ${ClassName}`} />;
-
-        case "Contrast":
-            return <IonIcons.Contrast className={`${globalClasses} ${ClassName}`} />;
-
-        case "ContrastOutline":
-            return <IonIcons.ContrastOutline className={`${globalClasses} ${ClassName}`} />;
-
-        case "LogoIonic":
-            return <IonIcons.LogoIonic className={`${globalClasses} ${ClassName}`} />;
     }
 }

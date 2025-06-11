@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { ToggleColorScheme } from "@/app/components/toggle-color-scheme";
 import { Navigation } from "@/app/components/navigation";
+import { PageTitle } from "@/app/components/page-title";
+import { Separator } from "@/app/components/separator";
+import { Search } from "@/app/components/search";
+
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -18,15 +23,23 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="de">
-            <body className={`${plusJakartaSans.className} antialiased w-screen h-screen flex`}>
-                <aside className="w-fit h-screen flex p-3 border-r-(length:--border-width) border-(--border-color)">
+        <html lang="de" className="dark">
+            <body className={`${plusJakartaSans.className} ease-out antialiased w-screen h-screen grid grid-cols-[max-content_1fr] grid-rows-[max-content_1fr] dark:dark:bg-neutral-950`}>
+                <header className="col-start-1 col-end-3 row-start-1 row-end-1 w-full h-fit flex p-3 gap-3 justify-center items-center dark:bg-neutral-900/50 border-b-(length:--border-width) dark:border-(--border-color)">
+                    <Search />
+                    <ToggleColorScheme />
+                </header>
+                <aside className="col-start-1 col-end-1 row-start-2 row-end-3 w-fit h-full flex flex-col p-3 gap-3 border-r-(length:--border-width) dark:border-(--border-color) dark:bg-neutral-900/50">
                     <Navigation />
+                    <Separator />
                 </aside>
-                {children}
+                <main className="col-start-2 col-end-2 row-start-2 row-end-2 w-full h-full flex flex-col justify-start items-start p-10 gap-8 dark:bg-neutral-950">
+                    <PageTitle />
+                    {children}
+                </main>
             </body>
         </html>
     );
 }
 
-// bg-[repeating-linear-gradient(45deg,_var(--border-color),_var(--border-color)_var(--border-width),_transparent_var(--border-width),_transparent_10px)]
+// dark:bg-[repeating-linear-gradient(45deg,_var(--border-color),_var(--border-color)_var(--border-width),_transparent_var(--border-width),_transparent_10px)]

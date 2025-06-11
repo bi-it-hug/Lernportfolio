@@ -1,31 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import * as IonIcons from "react-ionicons";
+import { IonIcon } from "@/app/components/ion-icon";
+import { useCurrentPath } from "@/app/hooks/useCurrentPath";
 
 export function Navigation() {
-    const pathname = usePathname();
+    const pathname = useCurrentPath();
 
-    const iconClasses = "size-3 text-neutral-50";
+    const base = "/sites/";
 
     const pages = [
-        { href: "/home", icon: <IonIcons.Home className={iconClasses} /> },
-        { href: "/settings", icon: <IonIcons.Cog className={iconClasses} /> },
+        { href: `${base}tasks`, icon: "Checkbox" },
+        { href: `${base}placeholder`, icon: "LogoIonic" },
+        { href: `${base}settings`, icon: "Settings" },
     ];
 
     return (
-        <nav>
-            <ul className="flex flex-col gap-1">
-                {pages.map((link) => (
-                    <li key={link.href} className="flex w-fit">
+        <nav className="size-fit">
+            <ul className="flex flex-col p-1.5 p-1.75 p-1.25">
+                {pages.map((pages) => (
+                    <li key={pages.href} className="flex size-fit">
                         <Link
-                            href={link.href}
-                            className={`${pathname === link.href ? `bg-indigo-300/10` : "bg-(--main-background-color)"} overflow-hidden border-(length:--border-width) border-(--border-color) flex justify-start items-center gap-1.5 w-32 capitalize text-sm text-neutral-50 hover:bg-neutral-800 rounded-lg`}
+                            href={pages.href}
+                            className={`${pathname === pages.href ? `dark:bg-[hsla(var(--theme-color),_0.1)] dark:hover:bg-[hsla(var(--theme-color),_0.1)]` : "dark:hover:bg-neutral-800/75"} flex justify-start items-center p-[0.4375rem] gap-[0.4375rem] w-46 capitalize text-sm dark:text-neutral-50 rounded-lg`}
                         >
-                            <div className={`${pathname === link.href ? "w-1.5" : "w-0"} h-full bg-indigo-300`}></div>
-                            {link.icon}
-                            <p className={`${pathname === link.href ? `text-indigo-300` : "text-neutral-50"} py-1`}>{link.href.replace("/", "")}</p>
+                            <IonIcon Icon={pages.icon} ClassName={`${pathname === pages.href ? `dark:fill-[hsl(var(--theme-color))]` : "dark:fill-neutral-500"}`} />
+                            <p className={`${pathname === pages.href ? `dark:text-[hsl(var(--theme-color))]` : "dark:text-neutral-500"} text-[0.8125rem] font-semibold leading-none`}>
+                                {pages.href.replace(base, "")}
+                            </p>
                         </Link>
                     </li>
                 ))}
@@ -33,6 +35,3 @@ export function Navigation() {
         </nav>
     );
 }
-
-// import { IonIcon } from "@/app/components/ion-icon";
-// <IonIcon Icon={link.icon} ClassName={`${pathname === link.href ? `fill-indigo-300` : "fill-neutral-50"} size-4`} />

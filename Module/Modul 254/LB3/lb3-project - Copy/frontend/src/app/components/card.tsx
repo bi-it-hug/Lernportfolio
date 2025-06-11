@@ -3,7 +3,7 @@ import { IonIcon } from "@/app/components/ion-icon";
 
 export function Card({ children }: { children?: ReactNode }) {
     return (
-        <div className="flex flex-col w-fit h-fit p-6 gap-6 justify-start items-start relative dark:text-neutral-50 max-w-fit max-h-fit overflow-hidden dark:bg-neutral-900/50 dark:border-(--border-color) border-(length:--border-width) rounded-md">
+        <div className="flex flex-col w-fit h-fit p-6 gap-6 justify-start items-start relative text-neutral-50 max-w-fit max-h-fit overflow-hidden bg-(--main-background-color) border-(--border-color) border-(length:--border-width) rounded-xl">
             {children}
         </div>
     );
