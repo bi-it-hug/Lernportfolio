@@ -1,10 +1,9 @@
 "use client";
 
 import config from "@/app/config";
-import { IonIcon } from "./ion-icon";
 import { Task } from "../models/task";
-import { useState, useRef, useCallback, ReactNode } from "react";
-import { CaretForward, CheckmarkDone, Create, CreateOutline, Trash, TrashOutline } from "react-ionicons";
+import { useState, useRef, useCallback, ReactNode, KeyboardEvent } from "react";
+import { Add, CaretForward, CheckmarkDone, CreateOutline, TrashOutline } from "react-ionicons";
 
 export function TaskList({ data }: { data: Task[] }) {
     const [tasks, setTasks] = useState(data);
@@ -68,7 +67,7 @@ export function TaskList({ data }: { data: Task[] }) {
         }
     }
 
-    function checkKey(e: React.KeyboardEvent, task: Task) {
+    function checkKey(e: KeyboardEvent, task: Task) {
         if (e.key === "Enter") {
             renameTask(task);
         } else if (e.key === "Escape") {
@@ -85,32 +84,44 @@ export function TaskList({ data }: { data: Task[] }) {
     }
 
     return (
-        <TaskListContent>
-            {tasks.map((task) => (
-                <li key={task.id} className={`group/item item ${task.completed ? "completed" : ""}`}>
-                    <Bulletpoint task={task} />
-                    <TaskName
-                        task={task}
-                        isEditing={editingTaskId === task.id}
-                        inputRef={(el) => inputRefs.current.set(task.id, el)}
-                        onKeyDown={(e) => checkKey(e, task)}
-                        onBlur={() => setEditingTaskId(null)}
-                    >
-                        {task.name}
-                    </TaskName>
-                    <TaskActions>
-                        <CompleteButton onComplete={() => completeTask(task)} />
-                        <EditButton onEdit={() => checkEdit(task)} />
-                        <DeleteButton onDelete={() => deleteTask(task)} />
-                    </TaskActions>
-                </li>
-            ))}
-        </TaskListContent>
+        <TaskListBox>
+            <TaskListHeader />
+            <ul className="flex flex-col w-full h-fit">
+                {tasks.map((task) => (
+                    <li key={task.id} className={`group/item item ${task.completed ? "completed" : ""}`}>
+                        <Bulletpoint task={task} />
+                        <TaskName
+                            task={task}
+                            isEditing={editingTaskId === task.id}
+                            inputRef={(el) => inputRefs.current.set(task.id, el)}
+                            onKeyDown={(e) => checkKey(e, task)}
+                            onBlur={() => setEditingTaskId(null)}
+                        >
+                            {task.name}
+                        </TaskName>
+                        <TaskActions>
+                            <CompleteButton onComplete={() => completeTask(task)} />
+                            <EditButton onEdit={() => checkEdit(task)} />
+                            <DeleteButton onDelete={() => deleteTask(task)} />
+                        </TaskActions>
+                    </li>
+                ))}
+            </ul>
+        </TaskListBox>
     );
 }
 
-export function TaskListContent({ children }: { children: ReactNode }) {
-    return <ul className="flex flex-col w-full h-fit border-t-(length:--border-width) border-(--border-color)">{children}</ul>;
+export function TaskListHeader() {
+    return (
+        <div className="flex justify-start items-center py-1.75 gap-2 text-sm font-normal w-full whitespace-nowrap">
+            <Add cssClasses="size-3.5 ml-3 dark:text-neutral-50" />
+            <p className="dark:text-neutral-50/80">Add Task</p>
+        </div>
+    );
+}
+
+export function TaskListBox({ children }: { children: ReactNode }) {
+    return <div className="flex flex-col w-full">{children}</div>;
 }
 
 export function TaskName({
@@ -125,13 +136,13 @@ export function TaskName({
     task: Task;
     isEditing: boolean;
     inputRef: (el: HTMLInputElement | null) => void;
-    onKeyDown: (e: React.KeyboardEvent) => void;
+    onKeyDown: (e: KeyboardEvent) => void;
     onBlur: () => void;
 }) {
     return (
         <div className="relative text-sm font-normal w-fit whitespace-nowrap">
             <p
-                className={`${task.completed ? "dark:text-neutral-50/50 italic after:w-full after:opacity-100" : "dark:text-neutral-50"} ${isEditing ? "opacity-0" : ""} after:absolute after:content-[] after:inset-y-0 after:left-0 after:w-0 after:opacity-0 after:h-[1px] after:bg-neutral-50 after:m-auto`}
+                className={`${task.completed ? "dark:text-neutral-50/50 italic after:w-full after:opacity-100" : "dark:text-neutral-50/80"} ${isEditing ? "opacity-0" : ""} after:absolute after:content-[] after:inset-y-0 after:left-0 after:w-0 after:opacity-0 after:h-10.25 after:m-auto after:dark:bg-neutral-50/80`}
             >
                 {children}
             </p>
@@ -140,7 +151,7 @@ export function TaskName({
                 type="text"
                 placeholder={children?.toString()}
                 defaultValue={children as string}
-                className={`absolute inset-0 px-1 w-fit dark:text-neutral-50 ${isEditing ? "" : "hidden"}`}
+                className={`absolute inset-0 px-1 w-fit dark:text-neutral-50/80 ${isEditing ? "" : "hidden"}`}
                 onKeyDown={onKeyDown}
                 onBlur={onBlur}
             />
@@ -177,5 +188,5 @@ export function DeleteButton({ onDelete }: { onDelete: () => void }) {
 }
 
 export function Bulletpoint({ task }: { task: Task }) {
-    return <CaretForward cssClasses={`size-3.5 ml-3  ${task.completed ? "dark:fill-neutral-50/50" : "dark:fill-neutral-50"}`} />;
+    return <CaretForward cssClasses={`size-3.5 ml-3 ${task.completed ? "dark:fill-neutral-50/50" : "dark:fill-neutral-50/80"}`} />;
 }

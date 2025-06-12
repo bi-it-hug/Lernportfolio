@@ -80,5 +80,8 @@ export function IonIcon({ Icon, ClassName }: { Icon: string; ClassName?: string 
 
         case "LogoIonic":
             return <IonIcons.LogoIonic className={`${globalClasses} ${ClassName}`} />;
+
+        case "Add":
+            return <IonIcons.Add className={`${globalClasses} ${ClassName}`} />;
     }
 }

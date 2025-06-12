@@ -20,7 +20,7 @@ export function ToggleColorScheme() {
     }
 
     return (
-        <button className="flex justify-center items-center size-fit p-[7px] rounded-full hover:cursor-pointer dark:hover:bg-neutral-800" onClick={toggleScheme}>
+        <button className="flex justify-center items-center size-fit p-[7px] rounded-full hover:cursor-pointer dark:hover:bg-neutral-800/75" onClick={toggleScheme}>
             <IonIcon Icon={isDark ? "Contrast" : "ContrastOutline"} ClassName="dark:fill-neutral-500" />
         </button>
     );
