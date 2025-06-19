@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "ionicons": "^8.0.8",
+        "mysql2": "^3.14.1",
         "next": "15.3.2",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",

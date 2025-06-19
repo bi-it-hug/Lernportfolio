@@ -1,7 +1,7 @@
 "use client";
 
 import config from "@/app/config";
-import { Task } from "../models/task";
+import { Task } from "../types/task";
 import { useState, useRef, useCallback, ReactNode, KeyboardEvent } from "react";
 import { Add, CaretForward, CheckmarkDone, CreateOutline, TrashOutline } from "react-ionicons";
 

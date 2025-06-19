@@ -23,43 +23,51 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
  * @version 02.06.2025
  */
 public class App {
+
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
 
         System.out.println("Hello Weather");
 
         // Verbindung aufbauen
-        String connectionString = "mongodb://root:root@localhost:27017";
+        String connectionString = "mongodb://root:example@localhost:27017";
         MongoClient mongoClient = MongoClients.create(connectionString);
 
         // Alle Datenbanken anzeigen
         System.out.println("List all databases:");
-        mongoClient.listDatabases().forEach((Consumer<? super Document>)
-            result -> System.out.println(result.toJson()));
+        mongoClient.listDatabases().forEach((Consumer<? super Document>) result -> System.out.println(result.toJson()));
 
-        //---------------------------------------------------------------------------------------------------------------
-
+        // ---------------------------------------------------------------------------------------------------------------
         // Aufgabe Datenklassen ergänzen (Unter package .weather.model: Measurement, Station, WeatherMeasurement)
+        MongoDatabase statisticDB = mongoClient.getDatabase("weathermeasurepojodb");
+        MongoCollection<Document> statisticCollection = statisticDB.getCollection("measures");
+
+        Document doc = new Document();
+
         // -> lombok verwenden
-
-
         // Aufgabe Daten-Objekte aufbauen (mit POJO)
         // -> mind. zwei Messungen
         // (setup weatherMeasurement, station and measures)
+        WeatherMeasurement weatherMeasurement = new WeatherMeasurement(
+                "Wettermessung",
+                new Date().toString(),
+                new Station("Winterthur", "8400"),
+                List.of(
+                        new Measurement(20.1, "temperature"),
+                        new Measurement(2.3, "windspeed")
+                )
+        );
 
-
-
-
-
-        //MongoDatabase statisticDB = mongoClient.getDatabase("weathermeasurepojodb");
-        //MongoCollection<Document> statisticCollection = statisticDB.getCollection("measures");
         // Aufgabe CodecProvider einsetzen
+        CodecProvider pojoCodecProvider = PojoCodecProvider.builder().register("ch.bsfh.jw.weather.model").build();
+        CodecRegistry pojoCodecRegistry = fromRegistries(com.mongodb.MongoClient.getDefaultCodecRegistry(), fromProviders(pojoCodecProvider));
+        statisticCollection = statisticCollection.withCodecRegistry(pojoCodecRegistry);
 
+        // write document to collection
+        doc.append("weatherMeasurement", weatherMeasurement);
+        statisticCollection.insertOne(doc);
 
-
-        //write document to collection
-
-        //---------------------------------------------------------------------------------------------------------------
-
+        // ---------------------------------------------------------------------------------------------------------------
         // Connection schliessen
         mongoClient.close();
     }
