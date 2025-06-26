@@ -150,3 +150,7 @@ statisticCollection = statisticCollection.withCodecRegistry(pojoCodecRegistry);
 doc.append("weatherMeasurement", weatherMeasurement);
 statisticCollection.insertOne(doc);
 ```
+
+### 6. Resultat beim ausführen des Codes:
+
+![alt text](image.png)
