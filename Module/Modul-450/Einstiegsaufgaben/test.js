@@ -41,7 +41,6 @@ function testCalculatePrice() {
         testOk = false
     }
 
-
     console.log(`Test OK? ${testOk}`)
 }
 
