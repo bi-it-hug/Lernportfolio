@@ -13,6 +13,7 @@ Willkommen in meinem Lernportfolio-Repository! Dieses Repository enthält alle A
 -   **[Modul 231](./Module/Modul%20231/)**: Datenschutz und Datensicherheit anwenden
 -   **[Modul 293](./Module/Modul%20293/)**: Webauftritt erstellen und veröffentlichen
 -   **[Modul 254](./Module/Modul%20254/)**: Geschäftsprozesse im eigenen Berufsumfeld beschreiben
+-   **[Modul 306](./Module/Modul%20306/)**: Kleinprojekte im eigenen Berufsumfeld abwickeln
 -   **[Modul 319](./Module/Modul%20319/)**: Applikationen entwerfen und implementieren
 -   **[Modul 320](./Module/Modul%20320/)**: Objektorientiert Programmieren
 -   **[Modul 322](./Module/Modul%20322/)**: Benutzerschnittstellen entwerfen und implementieren
@@ -20,6 +21,7 @@ Willkommen in meinem Lernportfolio-Repository! Dieses Repository enthält alle A
 -   **[Modul 347](./Module/Modul%20347/)**: Dienst mit Container anwenden
 -   **[Modul 426](./Module/Modul%20426/)**: Software mit agilen Methoden entwickeln
 -   **[Modul 431](./Module/Modul%20431/)**: Aufträge im eigenen Berufsumfeld selbstständig durchführen
+-   **[Modul 450](./Module/Modul%20450/)**: Applikationen testen
 
 ## Zweck
 
