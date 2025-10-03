@@ -26,5 +26,3 @@ Willkommen in meinem Lernportfolio-Repository! Dieses Repository enthält alle A
 ## Zweck
 
 Das Hauptziel dieses Repositories ist es, meine Bildungsreise zu dokumentieren und die abgeschlossenen Arbeiten nachzuverfolgen. Es dient als Portfolio für meine schulischen Leistungen und ist ein Ort, an dem ich über meinen Fortschritt reflektieren kann.
-
-The background color is `#ffffff` for light mode and `#000000` for dark mode.
