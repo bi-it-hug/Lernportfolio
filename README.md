@@ -4,24 +4,24 @@ Willkommen in meinem Lernportfolio-Repository! Dieses Repository enthält alle A
 
 ## Inhalt
 
--   **[Modul 114](./Module/Modul-114/)**: Codierungs-, Kompressions- und Verschlüsselungsverfahren einsetzen
--   **[Modul 117](./Module/Modul-117/)**: Informatik- und Netzinfrastruktur für ein kleines Unternehmen realisieren
--   **[Modul 122](./Module/Modul-122/)**: Abläufe mit einer Scriptsprache automatisieren
--   **[Modul 162](./Module/Modul-162/)**: Daten analysieren und modellieren
--   **[Modul 164](./Module/Modul-164/)**: Datenbanken erstellen und Daten einfügen
--   **[Modul 165](./Module/Modul-165/)**: NoSQL-Datenbanken einsetzen
--   **[Modul 231](./Module/Modul-231/)**: Datenschutz und Datensicherheit anwenden
--   **[Modul 293](./Module/Modul-293/)**: Webauftritt erstellen und veröffentlichen
--   **[Modul 254](./Module/Modul-254/)**: Geschäftsprozesse im eigenen Berufsumfeld beschreiben
--   **[Modul 306](./Module/Modul-306/)**: Kleinprojekte im eigenen Berufsumfeld abwickeln
--   **[Modul 319](./Module/Modul-319/)**: Applikationen entwerfen und implementieren
--   **[Modul 320](./Module/Modul-320/)**: Objektorientiert Programmieren
--   **[Modul 322](./Module/Modul-322/)**: Benutzerschnittstellen entwerfen und implementieren
--   **[Modul 346](./Module/Modul-346/)**: Cloud Lösungen konzipieren und realisieren
--   **[Modul 347](./Module/Modul-347/)**: Dienst mit Container anwenden
--   **[Modul 426](./Module/Modul-426/)**: Software mit agilen Methoden entwickeln
--   **[Modul 431](./Module/Modul-431/)**: Aufträge im eigenen Berufsumfeld selbstständig durchführen
--   **[Modul 450](./Module/Modul-450/)**: Applikationen testen
+- [x] **[Modul 114](./Module/Modul-114/)**: Codierungs-, Kompressions- und Verschlüsselungsverfahren einsetzen
+- [x] **[Modul 117](./Module/Modul-117/)**: Informatik- und Netzinfrastruktur für ein kleines Unternehmen realisieren
+- [x] **[Modul 122](./Module/Modul-122/)**: Abläufe mit einer Scriptsprache automatisieren
+- [x] **[Modul 162](./Module/Modul-162/)**: Daten analysieren und modellieren
+- [x] **[Modul 164](./Module/Modul-164/)**: Datenbanken erstellen und Daten einfügen
+- [x] **[Modul 165](./Module/Modul-165/)**: NoSQL-Datenbanken einsetzen
+- [x] **[Modul 231](./Module/Modul-231/)**: Datenschutz und Datensicherheit anwenden
+- [x] **[Modul 293](./Module/Modul-293/)**: Webauftritt erstellen und veröffentlichen
+- [x] **[Modul 254](./Module/Modul-254/)**: Geschäftsprozesse im eigenen Berufsumfeld beschreiben
+- [ ] **[Modul 306](./Module/Modul-306/)**: Kleinprojekte im eigenen Berufsumfeld abwickeln
+- [x] **[Modul 319](./Module/Modul-319/)**: Applikationen entwerfen und implementieren
+- [x] **[Modul 320](./Module/Modul-320/)**: Objektorientiert Programmieren
+- [x] **[Modul 322](./Module/Modul-322/)**: Benutzerschnittstellen entwerfen und implementieren
+- [x] **[Modul 346](./Module/Modul-346/)**: Cloud Lösungen konzipieren und realisieren
+- [x] **[Modul 347](./Module/Modul-347/)**: Dienst mit Container anwenden
+- [x] **[Modul 426](./Module/Modul-426/)**: Software mit agilen Methoden entwickeln
+- [x] **[Modul 431](./Module/Modul-431/)**: Aufträge im eigenen Berufsumfeld selbstständig durchführen
+- [ ] **[Modul 450](./Module/Modul-450/)**: Applikationen testen
 
 ## Zweck
 
