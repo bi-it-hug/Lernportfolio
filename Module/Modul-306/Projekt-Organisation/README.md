@@ -125,3 +125,4 @@ Die **kleinste organisatorische Einheit** einer Unternehmung nennt man **Stelle*
 - Mehrere Stellen können zu **Abteilungen** oder **Teams** zusammengefasst werden.
 
 Beispiel: In deinem KS Textil AG Organigramm ist **Hr. Müller, Chef Finanzbuchhaltung** eine Stelle.
+g
