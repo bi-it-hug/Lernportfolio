@@ -61,3 +61,9 @@ Obwohl SCRUM **technik-agnostisch** ist, werden häufig ergänzt:
 - **Unterstützender Konzepte** aus Lean, Agile und Software Craftsmanship
 
 > **Merksatz**: _SCRUM ist das „Was“ und „Wann“ – die Techniken sind das „Wie“._
+
+
+
+
+
+
