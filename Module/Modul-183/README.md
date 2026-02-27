@@ -1,5 +1,33 @@
 # Lernjournal
 
+## 2026-02-27
+
+**CWE** _(**C**ommon **W**eakness **E**numeration)_ ist im Grunde eine standardisierte Liste typischer Software-Schwächen – also Fehlerarten in Programmen, die Sicherheitsprobleme verursachen können.
+
+**Was ist CWE?**
+CWE ist ein gemeinsames, standardisiertes System, das Software-Schwächen beschreibt.
+Jede Schwäche hat eine eindeutige ID, einen Namen und eine Beschreibung. Zusätzlich gibt es Beispiele und manchmal Hinweise, wie man diese Schwächen vermeiden kann.
+
+**Wie hängt CWE mit OWASP zusammen?**
+OWASP erstellt beispielsweise die berühmte **OWASP Top Ten**, die die zehn häufigsten Sicherheitsrisiken in Webanwendungen aufführt, wie:
+
+- Injection
+- Broken Access Control
+- Security Misconfiguration
+
+Viele dieser Risiken basieren auf spezifischen CWE-Einträgen.
+
+**Beispiel:**
+SQL Injection → basiert auf **CWE-89**
+Das bedeutet: OWASP sagt damit: „Das ist ein hohes Risiko, das ihr unbedingt beachten müsst!“
+
+**Zusammenfassung der OWASP-Richtlinien:**
+
+- **OWASP Top Ten Risks:** Zeigt die häufigsten Sicherheitsrisiken in Webanwendungen – also, was alles schiefgehen kann.
+- **OWASP Proactive Controls:** Zeigt Best Practices, um diese Risiken von vornherein zu verhindern.
+
+---
+
 ## 2026-02-20
 
 ### WICHTIGE SCHUTZZIELE: CIA
