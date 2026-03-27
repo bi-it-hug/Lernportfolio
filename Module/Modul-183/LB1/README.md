@@ -38,3 +38,41 @@ Ein System ist anfällig, wenn es:
 - **Datendiebstahl** und Leakage von Passwörtern
 - **Erhöhtes Risiko für weitere Angriffe**, z. B. Privilege Escalation
 - **Vertrauensverlust und rechtliche Konsequenzen** für Unternehmen
+
+## Codebeispiel Schwachstelle
+
+Das folgende Beispiel zeigt ein **hart codiertes Passwort** im Quellcode. Wird der Code geleakt oder in einem Repository veröffentlicht, ist das Passwort sofort kompromittiert.
+
+```python
+# Unsicher: Passwort ist direkt im Code hinterlegt (Hardcoded Password)
+DB_HOST = "db.internal.local"
+DB_USER = "app_user"
+DB_PASSWORD = "SuperSecret123!"  # CWE-259 / CWE-798
+
+def connect_to_database():
+    print(f"Verbinde mit {DB_HOST} als {DB_USER}")
+    # Beispielhaft: Verbindung würde mit DB_PASSWORD aufgebaut
+```
+
+## Codebeispiel Massnahme
+
+Die Zugangsdaten werden **nicht im Code**, sondern über **Umgebungsvariablen** bezogen. So können Secrets getrennt vom Quellcode verwaltet werden (z. B. Secret Manager, CI/CD-Variablen, `.env` nur lokal).
+
+```python
+import os
+
+# Sicherer: Passwort wird aus Umgebungsvariablen geladen
+DB_HOST = os.getenv("DB_HOST", "db.internal.local")
+DB_USER = os.getenv("DB_USER", "app_user")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+
+def connect_to_database():
+    if not DB_PASSWORD:
+        raise ValueError("DB_PASSWORD ist nicht gesetzt.")
+    print(f"Verbinde mit {DB_HOST} als {DB_USER}")
+    # Beispielhaft: Verbindung würde mit DB_PASSWORD aufgebaut
+```
+
+## Resultate, Erkenntnisse
+
+## Hinweise auf weitere Unterlagen, Übungen, Tutorien (inkl. verwendeter Quellen)
