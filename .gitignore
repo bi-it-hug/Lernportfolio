@@ -2,3 +2,7 @@ Module/Modul 346/keys/private/
 Module/Modul 347/Aufgabe 10.6/m347-ref-card-01/
 Module/Modul 347/Aufgabe 10.6/m347-ref-card-02/
 **/desktop.ini
+**/node_modules/
+Module/Modul-183/LB1/demo-auth/backend/.env
+Module/Modul-183/LB1/demo-auth/backend/.env.*
+!Module/Modul-183/LB1/demo-auth/backend/.env.example

@@ -13,13 +13,19 @@ Dieses kleine Demo zeigt beide Beispiele aus `LB1/README.md`:
 cd .\demo-auth\backend
 ```
 
-2. Server starten:
+2. Abhangigkeiten installieren:
 
 ```powershell
-python .\server.py
+npm install
 ```
 
-3. Im Browser aufrufen:
+3. Server starten:
+
+```powershell
+npm start
+```
+
+4. Im Browser aufrufen:
 
 ```text
 http://127.0.0.1:8000
@@ -27,11 +33,25 @@ http://127.0.0.1:8000
 
 ## Sicheres Beispiel testen
 
-Ohne gesetztes `DB_PASSWORD` gibt der sichere Endpoint einen Fehler zuruck.
+Das Backend liest automatisch `demo-auth/backend/.env` (via `dotenv`).
 
-Setze fur den Test zuerst:
+1. Kopiere bei Bedarf die Vorlage:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+2. Passe in `.env` den Wert fur `DB_PASSWORD` an.
+
+3. Server starten:
+
+```powershell
+npm start
+```
+
+Alternative ohne `.env` (direkt in PowerShell):
 
 ```powershell
 $env:DB_PASSWORD = "MeinSicheresPasswort!"
-python .\server.py
+npm start
 ```

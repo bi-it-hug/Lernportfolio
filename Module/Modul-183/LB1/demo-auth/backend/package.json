@@ -1,0 +1,15 @@
+{
+    "name": "demo-auth-backend",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Mini backend for authentication failures demo",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "dotenv": "^17.2.3",
+        "express": "^4.21.2"
+    }
+}
