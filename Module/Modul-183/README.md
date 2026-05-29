@@ -1,5 +1,53 @@
 # Lernjournal
 
+## 2026-05-29
+
+Alle erkannten Sicherheitslücken geschlossen.
+
+## 2026-04-10
+
+### Sessionhandling
+
+**Vor dem Login:**
+
+array(0) {
+}
+
+**Nach dem Login:**
+
+array(2) {
+["username"]=>
+string(7) "lorenzo"
+["role"]=>
+string(4) "user"
+}
+
+Session-ID: `41528f29670943ec2b9c194d63f1cd0f`
+
+**Nach Eingabe eines geheimen Inhalts:**
+
+array(3) {
+["username"]=>
+string(7) "lorenzo"
+["role"]=>
+string(4) "user"
+["secret_message"]=>
+string(5) "toast"
+}
+
+**Nach Logout:**
+
+array(0) {
+}
+
+**Beobachtung:**
+Nach einem erneuten Login bleibt die Session-ID unverändert. Zudem ist der Cookie auch im ausgeloggten Zustand weiterhin vorhanden. Erst beim Login als Admin wird eine neue Session-ID vergeben: `1ced6b654da14d990c9f900ea8b228f2`.
+
+**Verbesserungsvorschlag:**
+Für ein sichereres Sessionhandling sollte beim Logout die Session serverseitig invalidiert und der Session-Cookie clientseitig gelöscht werden.
+
+---
+
 ## 2026-02-27
 
 **CWE** _(**C**ommon **W**eakness **E**numeration)_ ist im Grunde eine standardisierte Liste typischer Software-Schwächen – also Fehlerarten in Programmen, die Sicherheitsprobleme verursachen können.
@@ -45,7 +93,6 @@ Das bedeutet: OWASP sagt damit: „Das ist ein hohes Risiko, das ihr unbedingt b
 - Infos sollen **nicht unbefugt verändert** werden.
 - **Wer:** Authentifizierung und Autorisierung wichtig, nur Berechtigte dürfen ändern.
 - **Nachvollziehbarkeit:**
-
     - **Logging & Monitoring:** Verfolgt wer was gemacht hat; Alarm bei unerlaubten Aktionen.
     - **Backup:** Historie erlaubt Nachvollzug von Änderungen (nicht immer wer).
 
@@ -53,7 +100,6 @@ Das bedeutet: OWASP sagt damit: „Das ist ein hohes Risiko, das ihr unbedingt b
 
 - Systeme und Daten müssen **immer dann verfügbar** sein, wenn sie gebraucht werden.
 - **Massnahmen:**
-
     - Wartung ausserhalb der Bürozeiten.
     - Meldung vor destruktiven Aktionen.
     - Papierkorb-System: markierte Daten können wiederhergestellt werden.
