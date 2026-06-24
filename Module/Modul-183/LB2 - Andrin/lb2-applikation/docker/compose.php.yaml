@@ -1,0 +1,15 @@
+name: m183_lb2_php
+include:
+  - ./compose.db.yaml
+services:
+  web:
+      build: ./php/
+      container_name: m183-lb2-web
+      environment:
+        - DBSERVER=m183-lb2-db
+      ports:
+        - "80:80"
+      volumes:
+        - type: bind
+          source: ../todo-list-php
+          target: /var/www/html

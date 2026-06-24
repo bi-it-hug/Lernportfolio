@@ -1,0 +1,146 @@
+﻿[
+    {
+        "Id":  "2.4",
+        "Name":  "Passwortfeld type=password",
+        "Passed":  false,
+        "Detail":  "Regex auf login.js HTML"
+    },
+    {
+        "Id":  "2.2",
+        "Name":  "BCrypt Login",
+        "Passed":  null,
+        "Detail":  "Welcome-Seite nach Login"
+    },
+    {
+        "Id":  "2.5",
+        "Name":  "Session-Cookie Flags",
+        "Passed":  false,
+        "Detail":  "Set-Cookie: "
+    },
+    {
+        "Id":  "2.11",
+        "Name":  "User-Enumeration Login",
+        "Passed":  false,
+        "Detail":  "Msg1=\u0027\u0027 Msg2=\u0027\u0027"
+    },
+    {
+        "Id":  "2.10a",
+        "Name":  "Admin als Admin",
+        "Passed":  false,
+        "Detail":  "Admin-Seite OK"
+    },
+    {
+        "Id":  "2.10b",
+        "Name":  "Admin als User blockiert",
+        "Passed":  true,
+        "Detail":  "Status 302"
+    },
+    {
+        "Id":  "2.13",
+        "Name":  "Kein Hash in Admin",
+        "Passed":  true,
+        "Detail":  "Kein BCrypt im HTML"
+    },
+    {
+        "Id":  "2.6",
+        "Name":  "XSS escaped",
+        "Passed":  false,
+        "Detail":  "Task-Titel im HTML"
+    },
+    {
+        "Id":  "2.1",
+        "Name":  "SQL Injection Search",
+        "Passed":  false,
+        "Detail":  "Fehler: Invalid or missing CSRF token."
+    },
+    {
+        "Id":  "2.9",
+        "Name":  "SSRF kein provider",
+        "Passed":  true,
+        "Detail":  "Nur DB-Suche, kein externer Fetch"
+    },
+    {
+        "Id":  "2.8a",
+        "Name":  "IDOR Edit",
+        "Passed":  false,
+        "Detail":  "Edit fremder Task"
+    },
+    {
+        "Id":  "2.8b",
+        "Name":  "IDOR Delete",
+        "Passed":  false,
+        "Detail":  "Task von user1 nicht lÃ¶schbar"
+    },
+    {
+        "Id":  "2.7",
+        "Name":  "CSRF POST ohne Token",
+        "Passed":  true,
+        "Detail":  "403 erhalten"
+    },
+    {
+        "Id":  "2.14",
+        "Name":  "State Whitelist",
+        "Passed":  false,
+        "Detail":  "UngÃ¼ltiger state -\u003e open"
+    },
+    {
+        "Id":  "2.12",
+        "Name":  "Brute-Force Lockout",
+        "Passed":  false,
+        "Detail":  "Nach 6 Versuchen gesperrt"
+    },
+    {
+        "Id":  "3.1",
+        "Name":  "Register",
+        "Passed":  true,
+        "Detail":  "OK"
+    },
+    {
+        "Id":  "3.3",
+        "Name":  "History",
+        "Passed":  false,
+        "Detail":  "OK"
+    },
+    {
+        "Id":  "3.4",
+        "Name":  "Change Password",
+        "Passed":  false,
+        "Detail":  "OK"
+    },
+    {
+        "Id":  "3.5",
+        "Name":  "Delete Account",
+        "Passed":  false,
+        "Detail":  "OK"
+    },
+    {
+        "Id":  "NEW-1",
+        "Name":  "CSRF via GET /delete (Schwachstelle)",
+        "Passed":  true,
+        "Detail":  "DELETE per GET ohne CSRF mÃ¶glich - SCHWACHSTELLE"
+    },
+    {
+        "Id":  "NEW-5",
+        "Name":  "CSP unsafe-inline (Schwachstelle)",
+        "Passed":  true,
+        "Detail":  "CSP: default-src \u0027self\u0027; script-src \u0027self\u0027 \u0027unsafe-inline\u0027 https://cdnjs.cloudflare.com; style-src \u0027self\u0027;"
+    },
+    {
+        "Id":  "NEW-6",
+        "Name":  "Registrierung Username-Enum (Schwachstelle)",
+        "Passed":  false,
+        "Detail":  "Offenlegung existierender User"
+    },
+    {
+        "Id":  "NEW-8",
+        "Name":  "DB Schema login_attempts (Schwachstelle)",
+        "Passed":  true,
+        "Detail":  "Tabelle fehlte bei Erststart - Fix in SQL nÃ¶tig"
+    },
+    {
+        "Id":  "2.2b",
+        "Name":  "Passwort gehasht in DB",
+        "Passed":  false,
+        "Detail":  "Hash: ..."
+    }
+]
