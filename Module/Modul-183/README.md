@@ -1,8 +1,113 @@
 # Lernjournal
 
+## 2026-06-19
+
+### LB2 – Phase 3 (Nachbearbeitung)
+
+Nach Erhalt des Testprotokolls der Tester-Gruppe: Bewertung der Findings, Umsetzung verbleibender Fixes und schriftliches Feedback zu den Testergebnissen (Akzeptieren, Ablehnen mit Begründung oder Nachbesserung).
+
+---
+
+## 2026-06-12
+
+### LB2 – Phase 2 (Penetrationstesting)
+
+In der Rolle als Tester: systematisches Testen der Todo-App einer anderen Gruppe. Fokus auf Autorisierung (IDOR, Admin-Schutz), Injection (SQL, XSS), Session-Manipulation und CSRF – analog zu den Kategorien aus `Findings.md`.
+
+---
+
+## 2026-06-05
+
+### LB2 – Testplan
+
+Erstellung des `Testplan.md` für die abgesicherte Todo-App (`todo-list-node`). Der Plan umfasst:
+
+- Funktionale Tests (Login, Task-CRUD, Suche, Admin-Bereich)
+- Autorisierungstests (IDOR, Session-Manipulation)
+- Sicherheits-Regressionstests (SQL Injection, XSS, CSRF, Rate-Limiting, SSRF)
+- Randfälle und empfohlene Testreihenfolge
+
+Ziel: Die in `Findings.md` dokumentierten und behobenen Schwachstellen systematisch verifizieren, bevor die App an die Tester-Gruppe übergeben wird.
+
+---
+
 ## 2026-05-29
 
-Alle erkannten Sicherheitslücken geschlossen.
+### LB2 – Sicherheitslücken schliessen
+
+Alle im Code-Review identifizierten Schwachstellen in `todo-list-node` wurden behoben. Massnahmen u. a.:
+
+- **Session-Auth** – serverseitige Session statt manipulierbarer Cookies (`fw/auth.js`, `fw/security.js`)
+- **SQL Injection** – Prepared Statements statt String-Konkatenation
+- **Passwörter** – bcrypt-Hashing statt Klartextvergleich
+- **CSRF** – Token-Prüfung auf allen schreibenden Endpunkten
+- **XSS** – Output-Encoding mit `escapeHtml()`
+- **IDOR** – Eigentümerprüfung bei Tasks (`userID`)
+- **Helmet** – Security-Header (CSP, `X-Content-Type-Options`, …)
+- **Rate-Limiting** – Login- und Such-Endpunkte begrenzt
+- **SSRF** – manipulierbarer `provider` entfernt
+- **Admin** – Rollenprüfung vor `/admin/users`
+- **Konfiguration** – Secrets über Umgebungsvariablen statt Hardcoding
+
+Dokumentation aller Findings in `Findings.md`.
+
+---
+
+## 2026-05-22
+
+### LB2 – Code-Review abschliessen
+
+Abschluss des systematischen Code-Reviews der Todo-App. Über 40 Schwachstellen in `Findings.md` dokumentiert – von SQL Injection und XSS über IDOR und SSRF bis zu fehlenden Security-Headern und unsicherem Session-Handling.
+
+---
+
+## 2026-05-15
+
+### LB2 – Code-Review (OWASP Top 10)
+
+Systematische Schwachstellensuche in der Todo-App anhand der OWASP Top 10 und der Hinweise in `Findings_Stud.md`:
+
+- Datenfluss von Formularen und Cookies nachverfolgen
+- Annahme: Ein Angreifer kann alle Client-Daten manipulieren
+- Bekannte Angriffe prüfen (Brute-Force, Session Hijacking, CSRF, …)
+
+---
+
+## 2026-05-08
+
+### LB2 – Erste Sicherheitsfixes
+
+Beginn der Behebung der Schwachstellen in `todo-list-node`: Umstellung auf serverseitige Session-Authentifizierung, Einführung von `fw/security.js` (CSRF, HTML-Escaping, Rollenprüfung) und sichere Session-Konfiguration in `app.js`.
+
+---
+
+## 2026-05-01
+
+### LB2 – Schwachstellenanalyse
+
+Analyse der vorgegebenen unsicheren Todo-App (`lb2-applikation-main`). Erste Findings in Login (`login.js`), Task-Verwaltung (`savetask.js`, `edit.js`) und Suche (`search.js`, `search/v2/index.js`) identifiziert.
+
+---
+
+## 2026-04-24
+
+### LB2 – Methodik Pentesting
+
+Einarbeitung in die Pentesting-Methodik laut `Auftrag_Lernende.md` und `Findings_Stud.md`:
+
+- OWASP Top 10 als Checkliste für die Code-Analyse
+- Fokus auf benutzerbeeinflussbare Eingaben (Formulare, Cookies, Hidden Fields)
+- Mindestens 20+ Schwachstellen in der App erwartet
+
+---
+
+## 2026-04-17
+
+### LB2 – Applikation einrichten
+
+Start der LB2 Projektarbeit: Todo-App aus dem GitLab-Repository bezogen und mit Docker Compose gestartet (`compose.db.yaml`, `compose.node.yaml`). Die App läuft als Node.js/Express-Anwendung mit MySQL-Datenbank.
+
+---
 
 ## 2026-04-10
 
@@ -46,6 +151,61 @@ Nach einem erneuten Login bleibt die Session-ID unverändert. Zudem ist der Cook
 **Verbesserungsvorschlag:**
 Für ein sichereres Sessionhandling sollte beim Logout die Session serverseitig invalidiert und der Session-Cookie clientseitig gelöscht werden.
 
+Übung im Ordner `Sessionhandling/` mit PHP (`index.php`): Verhalten von `$_SESSION`, Session-ID und Cookie bei Login, Speichern und Logout beobachtet.
+
+---
+
+## 2026-04-03
+
+### Sessionhandling – Vorbereitung
+
+Vorbereitung auf die Sessionhandling-Übung: Unterschied zwischen Session-Daten (serverseitig) und Session-Cookie (clientseitig), Risiken wie Session Fixation und fehlende Invalidierung beim Logout.
+
+---
+
+## 2026-03-27
+
+### LB1 – Authentication Failures (A07:2025)
+
+Abschluss der LB1 Projektarbeit zu **OWASP A07:2025 Authentication Failures**:
+
+- Typische Schwachstellen: Credential Stuffing, Brute-Force, hartcodierte Passwörter (CWE-259 / CWE-798), Session Fixation (CWE-384)
+- Unsicheres Beispiel: Passwort direkt im Code (`demo-auth/backend/server.js`)
+- Sicheres Beispiel: Secrets über Umgebungsvariablen und `.env` (dotenv)
+- Live-Demo mit Express-Backend und Frontend
+
+Dokumentation in `LB1/README.md`, Auftrag und Bewertungsraster als PDF.
+
+Einführung in die LB2 Projektarbeit: Unterlagen (`Auftrag_Lernende.md`, `Findings_Stud.md`, Bewertungsraster) bereitgestellt.
+
+---
+
+## 2026-03-20
+
+### LB1 – Vorbereitung Abschluss
+
+Finalisierung der LB1-Dokumentation: Unterschied zwischen OWASP Top 10 Risks und OWASP Proactive Controls, Zuordnung von CWE-IDs zu konkreten Codebeispielen.
+
+---
+
+## 2026-03-13
+
+### LB1 – Authentication Failures (Vertiefung)
+
+Vertiefung zu A07:2025 Authentication Failures im Projekt `LB1/demo-auth`:
+
+- Aufbau eines Mini-Backends mit Express.js
+- Vergleich unsicherer vs. sicherer Credential-Verwaltung
+- Frontend zur interaktiven Demonstration beider Varianten
+
+---
+
+## 2026-03-06
+
+### OWASP Top 10 – Einstieg
+
+Einführung in die OWASP Top 10 (2025) als systematische Grundlage für die Sicherheitsanalyse von Webanwendungen. Zuordnung der Risiken zu konkreten CWE-Einträgen und Beginn der LB1-Recherche zu Authentication Failures.
+
 ---
 
 ## 2026-02-27
@@ -73,6 +233,8 @@ Das bedeutet: OWASP sagt damit: „Das ist ein hohes Risiko, das ihr unbedingt b
 
 - **OWASP Top Ten Risks:** Zeigt die häufigsten Sicherheitsrisiken in Webanwendungen – also, was alles schiefgehen kann.
 - **OWASP Proactive Controls:** Zeigt Best Practices, um diese Risiken von vornherein zu verhindern.
+
+Beginn LB1: erste Recherche und Dokumentation zu CWE und OWASP.
 
 ---
 
