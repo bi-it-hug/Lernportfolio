@@ -135,3 +135,8 @@ insert into users (ID, username, password) values (2, 'user1', '$2b$12$htyC8lP1M
 
 insert into permissions(ID, userID, roleID) values(null, 1, 1);
 insert into permissions(ID, userID, roleID) values(null, 2, 2);
+
+-- Application user with least privilege (no root/admin DB rights)
+CREATE USER IF NOT EXISTS 'm183_app'@'%' IDENTIFIED BY 'Some.Real.Secr3t';
+GRANT SELECT, INSERT, UPDATE, DELETE ON m183_lb2.* TO 'm183_app'@'%';
+FLUSH PRIVILEGES;

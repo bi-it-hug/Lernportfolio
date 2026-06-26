@@ -1,10 +1,37 @@
 # Lernjournal
 
-## 2026-06-19
+## 2026-06-26
 
 ### LB2 – Phase 3 (Nachbearbeitung)
 
-Nach Erhalt des Testprotokolls der Tester-Gruppe: Bewertung der Findings, Umsetzung verbleibender Fixes und schriftliches Feedback zu den Testergebnissen (Akzeptieren, Ablehnen mit Begründung oder Nachbesserung).
+Nach Erhalt des Testprotokolls der Tester-Gruppe (Andrin, `Findings_Andrin.md`): Bewertung der Findings, Umsetzung der verbleibenden Fixes und schriftliches Feedback.
+
+**Feedback zum Testbericht:** Die Top-10-Findings aus dem Code-Review sind nachvollziehbar und decken die kritischsten Angriffsvektoren ab (Injection, Broken Auth, IDOR, SSRF). Die meisten Punkte waren nach Phase 1 bereits behoben; der Tester hat den Ist-Stand korrekt erfasst. Einziger verbleibender Punkt war #4 (DB-Verbindung als `root`) – dieser wurde in Phase 3 nachgezogen.
+
+**Phase-3-Fix:** Dedizierter DB-Benutzer `m183_app` mit nur `SELECT/INSERT/UPDATE/DELETE` auf `m183_lb2.*` statt `root` (`config.js`, `.env.example`, `compose.node.yaml`, `docker/db/m183_lb2.sql`). Nach dem Update den DB-Container neu erstellen (`docker compose down -v` und neu starten), damit das Init-Skript den Benutzer anlegt.
+
+#### Schwachstellen aus `Findings_Andrin.md` – Zuordnung nach Phase
+
+| # | Schwachstelle | Phase | Umgesetzte Massnahme |
+| --- | --- | --- | --- |
+| 1 | SQL Injection (Login) | 1 | Prepared Statement in `login.js` (`WHERE username = ?`) |
+| 2 | Passwort im Klartext | 1 | `bcrypt.compare()` in `login.js`, automatische Migration alter Klartext-Passwörter |
+| 3 | SSRF + URL-Parsing-Bypass | 1 | Manipulierbarer `provider` entfernt; Suche nur noch über Session-`userId` in `search/v2/index.js` |
+| 4 | DB-User mit Root-Rechten | **3** | Neuer Benutzer `m183_app` mit Least-Privilege-Grants statt `root` |
+| 5 | SQL Injection (mehrfach) | 1 | Prepared Statements in `fw/db.js`, `edit.js`, `savetask.js`, `user/tasklist.js`, `search/v2/index.js` |
+| 6 | IDOR (fremde Tasks) | 1 | `AND userID = ?` bei SELECT/UPDATE/DELETE in `edit.js`, `savetask.js`, `deletetask.js` |
+| 7 | Fehlende Admin-Rollenprüfung | 1 | Middleware `requireAdmin` in `app.js`, Rollen aus DB in `fw/auth.js` |
+| 8 | Passwörter an Client gesendet | 1 | `admin/users.js` zeigt nur ID, Username und Rolle – keine Passwort-Felder |
+| 9 | Credentials über GET | 1 | Login-Formular auf `method="post"` umgestellt, keine `req.query`-Credentials |
+| 10 | Unsichere Session-Konfiguration | 1 | Serverseitige Session via `express-session` mit `httpOnly`, `secure`, `sameSite`; keine Auth-Cookies mehr |
+
+---
+
+## 2026-06-19
+
+### LB2 – Phase 3 (Vorbereitung)
+
+Übergabe des Testprotokolls durch die Tester-Gruppe erhalten. Analyse der Findings in `Findings_Andrin.md` und Abgleich mit dem aktuellen Code-Stand.
 
 ---
 
@@ -13,6 +40,8 @@ Nach Erhalt des Testprotokolls der Tester-Gruppe: Bewertung der Findings, Umsetz
 ### LB2 – Phase 2 (Penetrationstesting)
 
 In der Rolle als Tester: systematisches Testen der Todo-App einer anderen Gruppe. Fokus auf Autorisierung (IDOR, Admin-Schutz), Injection (SQL, XSS), Session-Manipulation und CSRF – analog zu den Kategorien aus `Findings.md`.
+
+**Ergebnis der anderen Gruppe (Andrin):** Code-Review mit Top-10-Findings in `LB2/Projektarbeit_container/Findings_Andrin.md` dokumentiert.
 
 ---
 
@@ -33,9 +62,9 @@ Ziel: Die in `Findings.md` dokumentierten und behobenen Schwachstellen systemati
 
 ## 2026-05-29
 
-### LB2 – Sicherheitslücken schliessen
+### LB2 – Phase 1: Sicherheitslücken schliessen
 
-Alle im Code-Review identifizierten Schwachstellen in `todo-list-node` wurden behoben. Massnahmen u. a.:
+Alle im Code-Review identifizierten Schwachstellen in `todo-list-node` wurden behoben (9 von 10 Findings aus `Findings_Andrin.md`; #4 DB-Root folgte in Phase 3). Massnahmen u. a.:
 
 - **Session-Auth** – serverseitige Session statt manipulierbarer Cookies (`fw/auth.js`, `fw/security.js`)
 - **SQL Injection** – Prepared Statements statt String-Konkatenation

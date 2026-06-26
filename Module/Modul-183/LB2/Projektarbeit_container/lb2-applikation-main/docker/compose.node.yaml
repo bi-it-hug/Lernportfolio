@@ -11,6 +11,7 @@ services:
         - DBSERVER=m183-lb2-db
         - NODE_ENV=production
         - SESSION_SECRET=${SESSION_SECRET:-change-me-in-production}
+        - DB_USER=m183_app
         - DB_PASSWORD=Some.Real.Secr3t
       ports:
         - "80:3000"

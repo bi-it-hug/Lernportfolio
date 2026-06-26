@@ -1,5 +1,11 @@
 # Lernjournal
 
+# 2026-06-26
+
+Einträge des ganzen Semesters überarbeitet und ergänzt.
+
+---
+
 ## 2026-06-19
 
 ### Funktionales Sortieren (LB2 – Fortsetzung)
