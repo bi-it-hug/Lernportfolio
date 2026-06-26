@@ -31,7 +31,7 @@ export async function html(req) {
     }
 
     htmlContent += `
-    <form id="form" method="post" action="/savetask">
+    <form id="task-form" method="post" action="/savetask">
         ${csrfField(req)}
         <input type="hidden" name="id" value="${escapeHtml(taskId)}" />
         <div class="form-group">

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="0d5333ad538e2d2a9f1f62081b816e9d3e436fbd2ebb889468af4a732a8b7bfd">
+    <title>TBZ Secure App</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0P+vQKVYj+qCtig8CzGpaFjVMInopra=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <header>
+        <div>This is the m183 test app</div>
+    </header>
+    <main>
+    
+    <h2>Login</h2>
+
+    <form id="form" method="post" action="/login">
+        <input type="hidden" name="_csrf" value="0d5333ad538e2d2a9f1f62081b816e9d3e436fbd2ebb889468af4a732a8b7bfd" />
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control size-medium" name="username" id="username" autocomplete="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control size-medium" name="password" id="password" autocomplete="current-password" required>
+        </div>
+        <div class="form-group">
+            <label for="submit"></label>
+            <input id="submit" type="submit" class="btn size-auto" value="Login" />
+        </div>
+    </form></main>
+<footer>
+    &copy;TBZ
+</footer>
+
+</body>
+</html>

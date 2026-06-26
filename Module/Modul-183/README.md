@@ -12,18 +12,18 @@ Nach Erhalt des Testprotokolls der Tester-Gruppe (Andrin, `Findings_Andrin.md`):
 
 #### Schwachstellen aus `Findings_Andrin.md` – Zuordnung nach Phase
 
-| # | Schwachstelle | Phase | Umgesetzte Massnahme |
-| --- | --- | --- | --- |
-| 1 | SQL Injection (Login) | 1 | Prepared Statement in `login.js` (`WHERE username = ?`) |
-| 2 | Passwort im Klartext | 1 | `bcrypt.compare()` in `login.js`, automatische Migration alter Klartext-Passwörter |
-| 3 | SSRF + URL-Parsing-Bypass | 1 | Manipulierbarer `provider` entfernt; Suche nur noch über Session-`userId` in `search/v2/index.js` |
-| 4 | DB-User mit Root-Rechten | **3** | Neuer Benutzer `m183_app` mit Least-Privilege-Grants statt `root` |
-| 5 | SQL Injection (mehrfach) | 1 | Prepared Statements in `fw/db.js`, `edit.js`, `savetask.js`, `user/tasklist.js`, `search/v2/index.js` |
-| 6 | IDOR (fremde Tasks) | 1 | `AND userID = ?` bei SELECT/UPDATE/DELETE in `edit.js`, `savetask.js`, `deletetask.js` |
-| 7 | Fehlende Admin-Rollenprüfung | 1 | Middleware `requireAdmin` in `app.js`, Rollen aus DB in `fw/auth.js` |
-| 8 | Passwörter an Client gesendet | 1 | `admin/users.js` zeigt nur ID, Username und Rolle – keine Passwort-Felder |
-| 9 | Credentials über GET | 1 | Login-Formular auf `method="post"` umgestellt, keine `req.query`-Credentials |
-| 10 | Unsichere Session-Konfiguration | 1 | Serverseitige Session via `express-session` mit `httpOnly`, `secure`, `sameSite`; keine Auth-Cookies mehr |
+| #   | Schwachstelle                   | Phase | Umgesetzte Massnahme                                                                                      |
+| --- | ------------------------------- | ----- | --------------------------------------------------------------------------------------------------------- |
+| 1   | SQL Injection (Login)           | 1     | Prepared Statement in `login.js` (`WHERE username = ?`)                                                   |
+| 2   | Passwort im Klartext            | 1     | `bcrypt.compare()` in `login.js`, automatische Migration alter Klartext-Passwörter                        |
+| 3   | SSRF + URL-Parsing-Bypass       | 1     | Manipulierbarer `provider` entfernt; Suche nur noch über Session-`userId` in `search/v2/index.js`         |
+| 4   | DB-User mit Root-Rechten        | **3** | Neuer Benutzer `m183_app` mit Least-Privilege-Grants statt `root`                                         |
+| 5   | SQL Injection (mehrfach)        | 1     | Prepared Statements in `fw/db.js`, `edit.js`, `savetask.js`, `user/tasklist.js`, `search/v2/index.js`     |
+| 6   | IDOR (fremde Tasks)             | 1     | `AND userID = ?` bei SELECT/UPDATE/DELETE in `edit.js`, `savetask.js`, `deletetask.js`                    |
+| 7   | Fehlende Admin-Rollenprüfung    | 1     | Middleware `requireAdmin` in `app.js`, Rollen aus DB in `fw/auth.js`                                      |
+| 8   | Passwörter an Client gesendet   | 1     | `admin/users.js` zeigt nur ID, Username und Rolle – keine Passwort-Felder                                 |
+| 9   | Credentials über GET            | 1     | Login-Formular auf `method="post"` umgestellt, keine `req.query`-Credentials                              |
+| 10  | Unsichere Session-Konfiguration | 1     | Serverseitige Session via `express-session` mit `httpOnly`, `secure`, `sameSite`; keine Auth-Cookies mehr |
 
 ---
 

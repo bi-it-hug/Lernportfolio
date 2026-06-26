@@ -1,15 +1,18 @@
 name: m183_lb2_node
 include:
   - ./compose.db.yaml
+volumes:
+  node_modules:
 services:
   web:
       image: node:latest
-      user: "node"
+      user: root
       working_dir: /home/node/app
       container_name: m183-lb2-web
       environment:
         - DBSERVER=m183-lb2-db
-        - NODE_ENV=production
+        # development: Session-Cookie ohne secure-Flag (http://localhost hat kein HTTPS)
+        - NODE_ENV=development
         - SESSION_SECRET=${SESSION_SECRET:-change-me-in-production}
         - DB_USER=m183_app
         - DB_PASSWORD=Some.Real.Secr3t
@@ -19,4 +22,5 @@ services:
         - type: bind
           source: ../todo-list-node
           target: /home/node/app
-      command: "npm start"
+        - node_modules:/home/node/app/node_modules
+      command: sh -c "npm install && chown -R node:node /home/node/app/node_modules && exec su -s /bin/sh node -c 'npm start'"
