@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Lernportfolio\\Module\\Modul-323\\Recursion\\Recursion.csproj": {}
+    "D:\\Projects\\Lernportfolio\\Module\\323\\Recursion\\Recursion.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Lernportfolio\\Module\\Modul-323\\Recursion\\Recursion.csproj": {
+    "D:\\Projects\\Lernportfolio\\Module\\323\\Recursion\\Recursion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Lernportfolio\\Module\\Modul-323\\Recursion\\Recursion.csproj",
+        "projectUniqueName": "D:\\Projects\\Lernportfolio\\Module\\323\\Recursion\\Recursion.csproj",
         "projectName": "Recursion",
-        "projectPath": "D:\\Projects\\Lernportfolio\\Module\\Modul-323\\Recursion\\Recursion.csproj",
+        "projectPath": "D:\\Projects\\Lernportfolio\\Module\\323\\Recursion\\Recursion.csproj",
         "packagesPath": "C:\\Users\\lorenzo.hug\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Lernportfolio\\Module\\Modul-323\\Recursion\\obj\\",
+        "outputPath": "D:\\Projects\\Lernportfolio\\Module\\323\\Recursion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
