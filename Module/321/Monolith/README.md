@@ -105,9 +105,9 @@ Der Reporting Service benötigt Informationen über Kurse, Prüfungen und Fortsc
                          │ Login           │
                          └────────┬────────┘
                                   │
-                     ┌────────────┼──────────────┐
-                     │            │              │
-                     ▼            ▼              ▼
+                    ┌─────────────┴──┬──────────────────┐
+                    │                │                  │
+                    ▼                ▼                  ▼
              ┌──────────────┐ ┌──────────────┐ ┌──────────────────┐
              │Course Service│ │Communication │ │ Reporting Service│
              │--------------│ │   Service    │ │------------------│
@@ -116,24 +116,24 @@ Der Reporting Service benötigt Informationen über Kurse, Prüfungen und Fortsc
              │Lernpfade     │ │Foren         │ └────────┬─────────┘
              └──────┬───────┘ │Ankündigungen │          │
                     │         └──────────────┘          │
-             ┌──────┴───────────┐                       │
-             │                  │                       │
-             ▼                  ▼                       │
+             ┌──────┴────────────┐                      │
+             │                   │                      │
+             ▼                   ▼                      │
      ┌────────────────┐ ┌──────────────────┐            │
-     │Content Service │ │Assessment Service│────────────┤
+     │Content Service │ │Assessment Service│            │
      │----------------│ │------------------│            │
-     │Videos          │ │Prüfungen         │            │
+     │Videos          │ │Prüfungen         │────────────┤
      │Dokumente       │ │Quizze            │            │
      │Module          │ │Aufgaben          │            │
      └───────┬────────┘ │Bewertungen       │            │
              │          └────────┬─────────┘            │
              │                   │                      │
-             └─────────┬─────────┘                      │
-                       ▼                                │
+             └──────────┬────────┘                      │
+                        ▼                               │
                 ┌────────────────┐                      │
-                │Progress Service│──────────────────────┘
-                │----------------│
-                │Fortschritt     │
+                │Progress Service│                      │
+                │----------------│                      │
+                │Fortschritt     │──────────────────────┘
                 │Abschlüsse      │
                 │Resultate       │
                 └────────────────┘
