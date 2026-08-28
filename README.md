@@ -22,13 +22,13 @@ Willkommen in meinem Lernportfolio-Repository! Dieses Repository enthält alle A
 | [Modul 346](./Module/Modul-346/) | 2        | Cloud Lösungen konzipieren und realisieren                                | Abgeschlossen  |
 | [Modul 347](./Module/Modul-347/) | 2        | Dienst mit Container anwenden                                             | Abgeschlossen  |
 | [Modul 426](./Module/Modul-426/) | 2        | Software mit agilen Methoden entwickeln                                   | Abgeschlossen  |
-| [Modul 183](./Module/Modul-183/) | 3        | Applikationssicherheit implementieren                                     | In Bearbeitung |
-| [Modul 306](./Module/Modul-306/) | 3        | Kleinprojekte im eigenen Berufsumfeld abwickeln                           | Offen          |
-| [Modul 323](./Module/Modul-323/) | 3        | Funktional Programmieren                                                  | In Bearbeitung |
-| [Modul 450](./Module/Modul-450/) | 3        | Applikationen testen                                                      | Offen          |
+| [Modul 183](./Module/Modul-183/) | 3        | Applikationssicherheit implementieren                                     | Abgeschlossen  |
+| [Modul 306](./Module/Modul-306/) | 3        | Kleinprojekte im eigenen Berufsumfeld abwickeln                           | Abgeschlossen  |
+| [Modul 323](./Module/Modul-323/) | 3        | Funktional Programmieren                                                  | Abgeschlossen  |
+| [Modul 450](./Module/Modul-450/) | 3        | Applikationen testen                                                      | Abgeschlossen  |
 | [Modul 241](./Module/Modul-241/) | 4        | Innovative ICT-Lösungen initialisieren                                    | Offen          |
 | [Modul 245](./Module/Modul-245/) | 4        | Innovative ICT-Lösungen umsetzen                                          | Offen          |
-| [Modul 321](./Module/Modul-321/) | 4        | Verteilte Systeme programmieren                                           | Offen          |
+| [Modul 321](./Module/Modul-321/) | 4        | Verteilte Systeme programmieren                                           | In Bearbeitung |
 | [Modul 324](./Module/Modul-324/) | 4        | DevOps-Prozesse mit Tools unterstützen                                    | Offen          |
 
 ## Zweck
